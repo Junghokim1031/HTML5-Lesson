@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식 관련 태그</title>
+    <style>
+        div
+        {
+            padding: 5px 0;
+        }
+        span
+        {
+            color: red;
+        }
+        input
+        {
+            padding: 5px 12px;
+        }
+        label
+        {
+            font-weight: bold;
+        }
+        select
+        {
+            padding: 5px 12px;
+        }
+        button
+        {
+            padding: 2.2px 10px;
+            background-color: grey;
+            color: white;
+        }
+        input[type=number]
+        {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 로그인폼
+        인가 -> Does this individual have this authority?
+        인증 -> Is this who he/she says he/she is?
+        Things like label and name are for accessibility.
+    <h1>Form (폼) 관련 태그</h1>
+    <h2>인증 - 로그인 폼</h2>
+    <form name="loginform">
+        <div>
+             
+            <label for="userid">아이디</label>
+            <input type="text" id="userid" name= "userid" minlength="8" maxlength="16">
+        </div>
+        <div>
+            <label for="passwd">비밀번호</label>
+            <input type="password" id="passwd" name="passwd" minlength="8" maxlength="16">
+        </div>
+        <div>
+            <button type="submit">로그인하기</button>
+        </div>
+    </form>
+    -->
+
+    <h2>회원가입 폼</h2>
+    <form name="joinfrm" method="post"> 
+        <!-- Everything is still visible even with method="post"on dev mode -> network ->click on anything->payload -->
+        <h3>회원정보 <span style="color: grey;">(필수)</span></h3>
+
+        <!--이름-->
+        <div>
+            <label for="name"><span>&ast;</span>이름</label>
+                <input type="text" id="name" name= "name">
+        </div>
+
+        <!--아이디-->
+        <div>
+            <label for="new_userid"><span>&ast;</span>아이디</label>
+                <input type="text" id="new_userid" name= "new_userid">
+                <button type="button">중복확인</button>
+        </div>
+        
+        <!--비번-->
+        <div>
+            <label for="new_userpw"><span>&ast;</span>비밀번호</label>
+                <input type="password" id="new_userpw" name= "new_userpw" minlength="8" maxlength="16">
+            &ast;영문 대소문자&sol;숫자&sol;택수문자를 혼용하여 2종류 10&dash;16자 또는 3종류 8&dash;16자    
+        </div>
+
+        <!--비번확인-->
+        <div>
+            <label for="new_userpw_confirm"><span>&ast;</span>비밀번호 확인</label>
+                <input type="text" id="new_userpw_confirm" name= "new_userpw_confirm" minlength="8" maxlength="16">
+        </div>
+        
+        <!--생일/성별-->
+        <div>
+            <label for="bdate"><span>&ast;</span>생일/성별</label>
+            <input type="date" id="bdate" name="bdate">
+             <!-- <select id="byear" name="byear">
+                <option>-</option>
+                <option>1990</option>
+                <option>1991</option>
+                <option>1992</option>
+                <option>1993</option>
+                <option>1994</option>
+                <option>1995</option>
+                <option>1996</option>
+                <option>1997</option>
+                <option>1998</option>
+            </select>년도
+            <select id="bmonth" name="bmonth">
+                <option>-</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>월
+            <select id="bday" name="bday">
+                <option>-</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+            </select>일-->
+            <input type="radio" id="new_gender_m" name="gender" value="m">남
+            <input type="radio" id="new_gender_f" name="gender" value="f">여
+        </div>
+
+        <!--주소-->
+        <div>
+            <label for="address_1">기본주소</label>
+                <div><input type="text" id="zipcode" name="zipcode" size="3" minlength="5" maxlength="5">
+                <button type="button">우편번호 검색</button></div>
+                <div><input type="text" id="address_1" name="address_1">&minus;
+                <input type="text" id="address_2" name="address_2"></div>
+
+        </div>
+
+        <!--모바일-->
+        <div>
+            <label for="mobile0"><span>&ast;</span>연락처</label>
+            <select id="mobile0" name="mobile0">
+                <option>선택</option>
+                <option>010</option>
+                <option>011</option>
+                <option>012</option>
+            </select>&minus;
+            <input type="tel" id="mobile_1" name="mobile_1" inputmode="numeric"  maxlength="4" size="4">&minus;
+            <input type="tel" id="mobile_2" name="mobile_1" inputmode="numeric" maxlength="4" size="4">
+        </div>
+
+        <!--이메일-->
+        <div>
+            <label for="email"><span>&ast;</span>이메일</label>
+                <input type="text" id="email" name="email" maxlength="32" size="32" placeholder="입력">&commat;
+            <select id="email_server" name="email_server">
+                <option>선택</option>
+                <option>hotmail.com</option>
+                <option>gmail.com</option>
+                <option>yahoo.com</option>
+                <option>naver.com</option>
+                <option>fbi.gov</option>
+            </select>
+            <button type="button">중복확인</button>
+        </div>
+
+        <!--회사전화-->
+        <div>
+            <label for="company_mobile"><span>&ast;</span>회사전화</label>
+            <select id="company_mobile" name="company_mobile">
+                <option>선택</option>
+                <option>010</option>
+                <option>011</option>
+                <option>012</option>
+            </select> &minus;
+            <input type="tel" id="company_mobile1" name="company_mobile1" inputmode="numeric" maxlength="4" size="5"> &minus;
+            <input type="tel" id="company_mobile2" name="company_mobile2" inputmode="numeric" maxlength="4" size="5">
+        </div>
+
+        <!--회사주소-->
+        <div>
+            <label for="business_address">회사주소</label>
+                <div><input type="number" id="business_address_zip_1" name="business_address_zip_1"> &minus;
+                <input type="number" id="business_address_zip_2" name="business_address_zip_2">
+                <button type="button">우편번호검색</button></div>
+                <input type="text" id="business_address" name="business_address">
+
+        </div>
+
+        <!--뉴스메일-->
+        <div>
+            <label for="mail_subscription" style="color: grey;">뉴스메일</label>
+                <input type="radio" id="mail_subscription" name="mail_subscription" value="yes_mail.">받습니다.
+                <input type="radio" id="no_mail_subscription" name="no_mail_subscription" value="no_mail">받지 않습니다.
+        </div>
+
+        <!--SMS안내-->
+        <div>
+            <label for="SMS" style="color: grey;">SMS 안내(이벤트)</label>
+                <input type="radio" id="SMS" name="SMS" value="SMS.">받습니다.
+                <input type="radio" id="no_SMS" name="SMS" value="no_SMS">받지 않습니다.
+        </div>
+
+        <!--관심분야-->
+        <div> 
+            <label for="interest">관심분야</label>
+            <input type="checkbox" id="interest_sports" name="interest" value="sports">스포츠
+            <input type="checkbox" id="interest_arts" name="interest" value="art">예술
+            <input type="checkbox" id="interest_politics" name="interest" value="politics">사회/정치
+            <input type="checkbox" id="interest_culture" name="interest" value="culture">문화/정치
+            <input type="checkbox" id="interest_reading" name="interest" value="reading">독서
+            <input type="checkbox" id="interest_movie" name="interest" value="movie">영화
+            <input type="checkbox" id="interest_game" name="interest" value="game">게임
+        </div>
+
+        <!--첨부파일-->
+        <div>
+            <label for="attach">첨부파일</label>
+            <input type="file" id="attach" name="attach">
+        </div>
+
+        <!--버튼-->
+        <div>
+            <label></label>
+            <button type="submit">가입하기</button>
+            <button type="reset">다시입력</button>
+        </div>
+    </form>
+</body>
+</html>
