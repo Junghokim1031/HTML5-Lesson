@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS03-1 질문</title>
+    <style>
+        /* CSS margin */
+        *{ 
+            /* resetting Margin */
+            margin: 0;
+            padding: 0;
+        } /* /CSS margin */
+
+        /* nav bar */
+        nav{
+            background-color: black;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+        } /* /nav bar */
+
+        /* nav mod - shape */
+        .navbutton{
+            display: inline-block;
+            width: 200px;
+            padding: 5px;            
+            line-height: 30px;
+            size: 2rem;
+            text-align: center;
+        }/* /nav mod - shape */
+
+        /* nav mod - color */
+        .navbutton:hover{
+            background-color: grey;
+            color: black;
+        } /* /nav mod - color */
+
+
+        /* nav mod - unique */
+        #home{
+            background-color: #04AA6D;
+        }
+        #home:hover{
+            background-color: #04AA6D;
+        } /* /nav mod - unique */
+    </style>
+</head>
+<body>
+
+    <!-- nav bar ------------------------------------------------------------>
+    <nav>
+        <ul>
+            <li class="navbutton" id="home"><a href="#">Home</a></li><!-- 이것이 없으면 공백이 존재합니다.
+            --><li class="navbutton"><a href="#">News</a></li><!--
+            --><li class="navbutton"><a href="#">Contact</a></li><!--
+            --><li class="navbutton"><a href="#">About</a></li>
+        </ul><!-- /nav bar -->
+    </nav>
+</body>
+</html>

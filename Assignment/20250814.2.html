@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS03-2,3 질문</title>
+    <style>
+        /* Reset CSS*/
+        *{
+            margin: 0;
+            padding: 0;
+        }/* /Reset CSS*/
+
+
+        /* Header */
+        header{
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }/* /Header */
+
+
+        /* nav-all */
+        nav{
+            height: 50px;
+            background-color: gray;
+        }
+
+        /* nav-a */
+        nav>a{
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 20px;
+        }/* /nav-a */
+        
+        /* nav-hover */
+        nav>a:hover{
+            color: black;
+            background-color: lightgray;
+        }/* /nav-hover /nav-all */
+
+
+        /* main article */
+        article{
+            width: 80%;
+            height: 500px;
+            background-color: #ddd;
+            float: left;             
+        }/* /main article */
+
+
+        /* aside */
+        aside {
+            width: 10%;
+            height: 500px;
+            background-color: #aaa;
+            float: left;
+        }/* /aside */
+
+
+        /* footer */
+        footer{
+            clear:both;
+            height: 100px;
+            background-color: #777;
+        }/* /footer */
+
+
+
+
+        /* classes */
+        /* article>content */
+        .content{
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+            display: inline-block;
+            padding: 20px;       
+            margin: 10px 10px  auto; 
+            background-image: url(https://cdn.pixabay.com/photo/2017/01/14/00/11/fractal-1978534_1280.jpg);
+            background-size: cover;
+            background-position: center;
+        }/* /article>content */
+
+
+
+
+        /* id */
+        /* ul - center images */
+        #center{
+            text-align: center;
+        }/* /ul - center images */
+    </style>
+</head>
+<body>
+
+    <!-- 머리말---------------------------------------->
+    <header>
+        <h1>글로벌아이티</h1>
+    </header><!--/머리말-->
+
+
+    <!-- Navigation ---------------------------------------->
+    <nav>
+        <a href="#">교육원 소개</a>
+        <a href="#">교육원 연혁</a>
+        <a href="#">과정 소개</a>
+        <a href="#">Contact</a>
+    </nav> <!-- /Navigation -->
+
+
+    <!-- aside ---------------------------------------->
+    <aside>
+        광고1
+    </aside><!-- /aside -->
+
+
+    <!-- article ---------------------------------------->
+    <article>
+        글로벌아이티 소개
+        <ul id="center">
+            <li class="content"></li>
+            <li class="content"></li>
+        </ul>
+        <br>
+        <p id="center">|________________________________________|</p>
+    </article> <!-- /article -->
+
+
+    <!-- aside ---------------------------------------->
+    <aside>
+        광고2
+    </aside><!-- /aside -->
+
+
+    <!-- footer ---------------------------------------->
+    <footer>
+        &copy;All rights reserved by 글로벌아이티.
+    </footer><!-- /footer -->
+</body>
+</html>
