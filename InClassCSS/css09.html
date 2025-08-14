@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS연습</title>
+  <style>
+    h1{
+      font-size: 100px;
+      /* color: hsl(0,100%,50%); */
+      color: hsl(198,86.8%,47.5%);
+    }
+
+    /*div {
+      border: 1px solid black;
+      padding: 10px;
+      width: 200px;
+      height: 300px;
+      text-align: justify;
+    }*/
+ 
+    .heading {
+        width: 500px;
+        height: 100px;
+        background: #222;
+        color: rgb(255,255,255);
+        margin: auto; /* auto centers the block */
+        text-align: center; /* auto centers the text */
+        line-height: 100px; 
+        /* if line-height = height, vertically align the single line */
+        font-size: 30px;
+        font-weight: 900;
+    }
+    .shadow1{
+        color: red;
+        text-shadow: 1px 1px black;
+    }
+    .shadow2{
+        text-shadow: 5px 5px 3px #ffa500;
+    }
+    .shadow3{
+        color: #fff;
+        text-shadow: 7px -7px 20px #000;
+        box-shadow: 2px 2px 5px #000;;
+    }
+    .spacing1{
+        letter-spacing: .2em;
+    }
+    .spacing2{
+        letter-spacing: .5em;
+    }
+ </style>
+</head>
+<body>
+    <div class="heading">
+        HTML
+    </div>
+
+    <h1>CSS</h1>
+    <p>껍질에 붉은 빛이 들어 <span class="accent">레드향</span>이라 불린다.</p>
+    
+    <h1>Example text-align: justify</h1>
+
+    <p>The text-align: justify; value stretches the lines so that each line has equal width (like in newspapers and magazines).</p>
+
+    <div>
+    In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'
+    </div>
+
+    <p style="text-decoration: none ;">none</p>
+    <p style="text-decoration: underline;">underline</p>
+    <p style="text-decoration: overline;">overline</p>
+    <p style="text-decoration: line-through;">line-through</p>
+    <hr>
+    <p style="text-decoration:dashed line-through;">dashed line-through</p>
+    <p style="text-decoration:dotted line-through;">dotted line-through</p>
+    <p style="text-decoration:double line-through;">double line-through</p>
+    <p style="text-decoration:solid ;">solid</p>
+    <p style="text-decoration:wavy line-through;">wavy line-through</p>
+    <hr>
+
+    <h1 class="shadow1">HTML</h1>
+    <h1 class="shadow2">CSS</h1>
+    <h1 class="shadow3">JavaScript</h1>
+    
+    <hr>
+    <p>CSS</p>
+    <h1 class="spacing1">HTML</h1>
+    <h1 class="spacing2">CSS</h1>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 소개 페이지</title>
+    <style>
+        p{
+            font-style: italic;
+        }
+        .accent
+            {
+                border:1px solid black;
+                padding:5px;
+            }
+        .bg 
+        {
+            background-color: #ddd;
+        }
+        .bg2
+        {
+            background-color: plum;
+            width: 50%;
+            margin: 30px;
+            padding: 30px;
+            border: 3px solid black;
+        }
+        #bg3text
+        {
+            width: 100px;
+            height: 5ch;
+        }
+    </style>
+</head>
+<body>
+    <!-- Both class accent and bg applies to this h1 -->
+    <h1 class="accent bg">레드향</h1>
+    <p>껍질에 붉은 빛이 돌아 <span class="accent">레드향</span>이라고 불린다.</p>
+    <p>레드향은 한라봉과 귤을 교배한 것으로...</p>
+    <p>비타민 C와 비타민 P가 풍부해...</p>
+    <p class="bg2">레드향 맛있어요.</p>
+
+    <label for="bg3">라이벨</label>
+    <input type="text" id="bg3text" name="bg3">
+</body>
+</html>
