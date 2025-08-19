@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 연습문제 05 1부</title>
+    <style>
+        /*    Reset CSS  */
+        * { margin:0;  padding:0; }
+        ol,ul { list-style: none; }
+
+        /* 색상 변경 위치 --------------------------------------------- */
+        :root{
+            --main-bg-color: white;
+            --default-border: lightgrey;
+            --default-color:black;
+            --naver-color: green;
+            --google-color: orange;
+            --chatGPT-color: red;
+
+            --hover-color:white;
+        }/* /색상 변경 위치 */
+
+        /* 버튼 속성 --------------------------------------------- */
+        button{
+            background-color: var(--main-bg-color);
+            border: 1px solid var(--default-border);
+            color: var(--default-color);
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            line-height: 50px;
+        }/* /버튼 속성 */
+
+        
+        
+        
+        
+        /* CLASS */
+        /* 2차형 버튼---------------------------------------------  */
+        .roundButton{
+            border-radius: 10%;
+        }/* /2차형 버튼  */
+
+        /* google --------------------------------------------- */
+        .google{
+            border: 1px solid var(--google-color);
+            color: var(--google-color);
+        }
+        .google:hover{
+            background-color: var(--google-color);
+            color: var(--hover-color);
+        }        
+        /* /google */
+
+        /* naver --------------------------------------------- */
+        .naver{
+            border: 1px solid var(--naver-color);
+            color: var(--naver-color);
+        }
+        .naver:hover{
+            background-color: var(--naver-color);
+            color: var(--hover-color);
+        }/* /naver */
+
+        /* chatGPT ---------------------------------------------*/
+        .chatGPT{
+            border: 1px solid var(--chatGPT-color);
+            color: var(--chatGPT-color);
+        }
+        .chatGPT:hover{
+            background-color: var(--chatGPT-color);
+            color: var(--hover-color);
+        }/* /chatGPT */
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- 일반형 버튼 작성 --------------------------------------------->
+    <a href="https://google.com" target="_blank"><button class="google" name="series1">Google</button></a>
+    <a href="https://www.naver.com/" target="_blank"><button class="naver" name="series1">Naver</button></a>
+    <a href="https://chatgpt.com/" target="_blank"><button class="chatGPT" name="series1">ChatGPT</button></a>
+    <br><!-- /일반형 버튼 작성 -->
+
+    <!-- 동그란형 버튼 작성 --------------------------------------------->
+    <a href="https://google.com" target="_blank"><button class="roundButton google" name="series1">Google</button></a>
+    <a href="https://www.naver.com/" target="_blank"><button class="roundButton naver" name="series1">Naver</button></a>
+    <a href="https://chatgpt.com/" target="_blank"><button class="roundButton chatGPT" name="series1">ChatGPT</button></a>
+    <!-- /동그란형 버튼 작성 -->
+</body>
+</html>

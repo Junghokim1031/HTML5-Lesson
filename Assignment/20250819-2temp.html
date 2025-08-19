@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 연습문제 05 2부</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            background-color: white;
+        }
+        /* nav bar 재작성 */
+        #gnb{
+            width: 100%;
+            height: 50px;
+            background-color: grey;
+            line-height: 50px;
+        }
+
+        .menu{
+            list-style: none;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: grey;
+            color: white;
+            float: left;
+        }
+        
+        /* Menu float  */
+        .menu:hover{
+            color: black;
+            background-color: lightgrey;
+        }
+
+        #course{
+            width: 200px;
+            text-align: center;
+            list-style: none;
+            line-height: 50px;  
+            background-color: inherit;
+        }
+
+
+
+
+
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="gnb"><!--
+            --><li class="menu">교육원 소개</li><!--
+            --><li class="menu">교육원 연혁</li><!--
+            --><li class="menu" ><ul id="course">과정 소개
+            <li>백엔드과정</li>
+            <li>풀스택과정</li>
+            <li>UI/UX과정</li>
+        </ul></li><!--
+            --><li class="menu">Contact</li>
+        </ul>
+        
+
+        
+    </nav> <!-- /Navigation -->
+</body>
+</html>

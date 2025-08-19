@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Practice 02</title>
+    <style>
+        .navi ul li{
+            float: left;
+            width: 150px;   
+            padding: 10px; /* this padding is not covered by the pseudo class */
+            text-decoration: none;
+            border: 1px solid black;
+            list-style: none; /*Erase the bullet point */
+        }
+
+        .navi a:link, a:visited{
+            display:block; /*박스 형태로 출력 가능 */
+            font-size: 14px;
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .navi a:hover, a:focus{
+            background-color: #666;
+            color: white;
+        }
+        .navi a:active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navi">
+        <ul>
+            <li><a href="#">이용 안내</a></li>
+            <li><a href="#">객실 안내</a></li>
+            <li><a href="#">예약 방법 및 요금</a></li>
+            <li><a href="#">예약하기</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

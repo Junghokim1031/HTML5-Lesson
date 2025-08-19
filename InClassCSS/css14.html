@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 연습 14 pg 405 - 411</title>
+    <style>
+        /* 405 */
+        a[href]{
+            background: yellow;
+            border: 1px solid #ccc;
+            font-weight: normal;
+        }
+
+        /* 406 */
+        a[target="_blank"]{
+            padding-right: 30px;
+            background: url(img/newwindow.png) no-repeat center right;
+        }
+
+        /* 407 */
+        [class ~= "button"]{
+            box-shadow: rgba(0, 0, 0, 0.4) 4px 4px; /*alpha = transaparency between 0(clear) - 1(not clear) */
+            border-radius: 5px;
+        }
+
+        /* 408 */
+        a[title|="us"]{
+            padding-right: 25px;
+            background: url("img/us.png") no-repeat right center;
+        }
+        a[title|="jap"]{
+            padding-right: 25px;
+            background: url("img/jp.png") no-repeat right center;
+        }
+        a[title|="chn"]{
+            padding-right: 25px;
+            background: url("img/ch.png") no-repeat right center;
+        }
+
+        /* 409 */
+        #menu a[title^="eng"]{
+            padding: 5px 25px;
+            background: url("img/us.png") no-repeat left center;
+        }
+        #menu a[title^="jap"]{
+            padding: 5px 25px;
+            background: url("img/jp.png") no-repeat left center;
+        }
+        #menu a[title^="chi"]{
+            padding: 5px 25px;
+            background: url("img/ch.png") no-repeat left center;
+        }
+
+        /* 410 */
+        #menu2 a[href$="hwp"]{
+            background: url("img/hwp_icon.gif") center right no-repeat;
+            padding-right: 25px;
+        }
+        #menu2 a[href$="xls"]{
+            background: url("img/excel_icon.gif") center right no-repeat;
+            padding-right: 25px;
+        }
+
+        /* 411 */
+        #menu3 a[href *= "w3"]{
+                background-color: blue;
+                color: white;
+        }
+        #menu3 a[href *= "school"]{
+                background-color: purple;
+                color: white;
+        }
+        #menu3 a[href *= "wg"]{
+                background-color: green;
+                color: white;
+        }
+        #menu3 a[href *= "mozilla"]{
+                background-color: black;
+                color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 405 -->
+    <ul>
+        <li><a>메인 메뉴</a></li>
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#">메뉴 2</a></li>
+        <li><a href="#">메뉴 3</a></li>
+        <li><a href="#">메뉴 4</a></li>
+    </ul>
+
+    <!-- 406 -->
+    <ul>
+        <li><a href="https://www.google.com" target="_blank">google</a></li>
+        <li><a href="https://www.naver.com">naver</a></li>
+        <li><a href="https://www.chatgpt.com">chatgpt</a></li>
+    </ul>
+
+    <!-- 407 -->
+    <ul>
+        <li><a href="#" class="flat">메뉴 1</a></li>
+        <li><a href="#" class="flat">메뉴 2</a></li>
+        <li><a href="#" class="button">메뉴 3</a></li>
+        <li><a href="#" class="flat button">메뉴 4</a></li>
+    </ul>
+
+    <!-- 408 -->
+    <ul>
+        <li>외국어 서비스 :</li>
+        <li><a href="#" title="us-english">영어</a></li>
+        <li><a href="#" title="jap">일본어</a></li>
+        <li><a href="#" title="chn">중국어</a></li>
+    </ul>
+
+    <!-- 409 -->
+    <ul id="menu">
+        <li>외국어 서비스 :</li>
+        <li><a href="#" title="english">영어</a></li>
+        <li><a href="#" title="japanese">일본어</a></li>
+        <li><a href="#" title="chinese">중국어</a></li>
+    </ul>
+
+    <!-- 410 -->
+    <ul id="menu2">
+        <li><a href="intro.hwp">hwp 파일</a></li>
+        <li><a href="intro.xls">엑셀 파일</a></li>
+    </ul>
+
+    <!-- 411 -->
+     <ul id="menu3">
+        <li><a href="https://www.w3.org/">W3</a></li>
+        <li><a href="https://www.w3schools.com/">W3 School</a></li>
+        <li><a href="https://whatwg.org/">WHATWG</a></li>
+        <li><a href="https://developer.mozilla.org/">MDN</a></li>
+     </ul>
+</body>
+</html>

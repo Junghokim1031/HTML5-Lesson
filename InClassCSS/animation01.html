@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Practice 01 pg 470</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: maroon;
+
+            animation: slideRight 5s infinite alternate;
+        }
+        #box1{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 60px auto;
+            background-color: aliceblue;
+
+            animation: rotate 5s infinite normal, bgcolor 5s infinite alternate;
+        }
+
+        /* @keyframes slideRight{
+            0%{ transform:translateX(0);}
+            50%{ transform:translateX(500px);}
+            100%{ transform:translateX(0);}
+        } */
+
+
+        /* @keyframes slideRight{
+            0%{ transform:translateX(0);}
+            50%{ transform:translate(300px,300px) scale(1,1) rotate(-7200deg) rotatey(-180deg) skewX(90deg);}
+            100%{ transform:translateX(400px);}
+        } */
+
+        @keyframes rotate{
+            0%{transform: perspective(120px) rotatex(0deg) rotateY(0deg);}
+            50%{transform: perspective(120px) rotatex(-180deg) rotateY(0deg);}
+            100%{transform: perspective(120px) rotatex(-180deg) rotateY(-180deg);}
+        }
+
+        @keyframes bgcolor{
+            0%{background-color: red;}
+            50%{background-color: green;}
+            100%{background-color: aliceblue;}
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div class="box"></div>
+    </div>
+
+    <div>
+        <div id="box2"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Practive 15 pg 419</title>
+    <style>
+        #signup input{
+            display: none !important; /* How to get rid of radio button */
+        }
+        #signup input:checked + label{
+            color: red;
+            font-weight: bold;
+        }
+        #signup label{
+            padding: 5px;
+            margin: 5px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="signup">
+        <!-- radio -->
+        <!-- checked marks it automatically when page loads -->
+        <input type="radio" name="room" id="basic" value="basic" checked>
+            <label for="basic">기본형(최대2인)</label><br>
+        <input type="radio" name="room" id="family" value="family">
+            <label for="family">기본형(최대8인)</label><br>
+
+        <!-- check box -->
+        <!-- if all name share same name, it sends data in JavaScript as array -->
+        <!-- if all names are different, it sends data in JavaScript as string -->
+        <input type="checkbox" name="hobby_exercise" id="hobby_exercise" value="exercise"> 
+            <label for="hobby_exercise">운동</label><br>
+        <input type="checkbox" name="hobby_reading" id="hobby_reading" value="reading"> 
+            <label for="hobby_reading">독서</label><br>
+        <input type="checkbox" name="hobby_coding" id="hobby_coding" value="coding"> 
+            <label for="hobby_coding">코딩</label><br>
+        <input type="checkbox" name="hobby_music" id="hobby_music" value="music"> 
+            <label for="hobby_music">음악감상</label><br>
+    </div>
+
+</body>
+</html>
