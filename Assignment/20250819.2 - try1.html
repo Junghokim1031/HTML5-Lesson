@@ -25,7 +25,7 @@
         }/* /Header */
 
         /* nav-all */
-        #gnb{
+        .gnb{
             position: absolute;
             top: 200px;
             height: 50px;
@@ -34,17 +34,14 @@
         }/* /nav */
 
         /* nav buttons */
-        #gnb>li{
+        .gnb>li{
             float: left;
             color: white;
             text-align: center;
-            line-height: 50px auto;
+            line-height: auto;
             padding: 10px;
             list-style: none;
             font-size: 20px;
-        }
-        #gnb>li:hover{
-            color:black;
         }/* /nav */
         
         /* nav-hover */
@@ -63,6 +60,7 @@
             height: 50px;
             line-height: 50px;
             width: inherit;
+            padding:inherit;
         }
         #course:hover{
             color: black;
@@ -140,7 +138,7 @@
 
     <!-- Navigation ---------------------------------------->
     <nav>
-        <ul id="gnb">
+        <ul class="gnb">
             <li id="introduction">교육원 소개</li><!--
             --><li id="history">교육원 연혁</li><!--
             --><li id="course"><ul>과정 소개

@@ -19,7 +19,7 @@
 
     <!-- 동영상/Background ---------------------------------------->
     <figure class="video">
-        <video loop autoplay muted>
+        <video loop="loop" autoplay muted>
             <source src="img/nike.mp4" title="Background Image">
         </video>
     </figure> <!-- /동영상/Background -->
@@ -32,13 +32,90 @@
     <!-- To reduce Total Overall Cost (TOC), nav should be in its own file -->
     <header>
         <ul id="gnb">
-            <li id="active"><a href="#"><en><i class="fa fa-refresh" aria-hidden="true"></i>About</en></a></li>
-            <li><a href="#"><en>Brand Info</en></a></li>
-            <li><a href="#"><en>Community</en></a></li>
-            <li><a href="#"><en>Product Value</en></a></li>
-            <li><a href="#"><en>Company History</en></a></li>
+            <li class="on"> <!-- Why use class? we can later use JQuery to move class to other listed item-->
+                <a href="#"><em><i class="fa fa-refresh fa-spin"></i>About</em></a>
+                <ul>
+                    <li><a href="#"><em><b>English</b></em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Brand Info</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Community</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Product Value</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><em>Company History</em></a>
+                <ul>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                    <li><a href="#"><em>sub</em></a></li>
+                </ul>
+            </li>
         </ul><!-- /Header (Global Navigation Bar, GNB) -->
     </header>
+
+    <!--icon----------------------------------------------------------------->
+    <ul id="sns">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+		<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+    </ul>
+
+    <!-- 웹폰트 텍스트박스 -->
+	<section class="txtBox">
+		<p class="txt">Best Qualified<b>AIR MAX</b></p>
+		<p class="tit">50<em>/ 24</em></p>
+	</section>	
+
+    <!-- 하단 컨텐츠박스 -->
+	<section id="side">
+		<div class="con">
+			<p>
+				<em>Event & Community</em>
+				<a href="#"><img src="img/pic1.png" /></a>				
+			</p>
+			<p>
+				<em>News & Notice</em>
+				<a href="#"><img src="img/pic2.png" /></a>				
+			</p>
+			<p>
+				<em>Product Review</em>
+				<a href="#"><img src="img/pic3.png" /></a>				
+			</p>		
+		</div>	
+
+        <!-- animation icon-->
+        <section class="btnContents">
+            <i class="fa fa-angle-double-left"></i>
+            <i class="fa fa-angle-double-left"></i>
+            <i class="fa fa-angle-double-left"></i>
+        </section>  	
+	</section>
+
+
+
 
 </body>
 </html>

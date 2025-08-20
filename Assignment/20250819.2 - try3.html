@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS03-2,3 질문</title>
+    <style>
+        /* Reset CSS*/
+        *{
+            margin: 0;
+            padding: 0;
+        }/* /Reset CSS*/
+
+
+        /* Header */
+        header{
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }/* /Header */
+
+
+        /* nav-all */
+        nav{
+            height: 50px;
+            background-color: gray;
+        }
+
+        .nav{
+            position: fixed;
+        }
+
+        .nav li{
+            display: inline-block;
+            width: 150px;
+            line-height: 50px;
+            text-align: center;
+
+        }
+
+        .nav li a{
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .nav ul{
+            position: absolute;
+            display: block;
+            background-color: white;
+            width: 150px;
+            bottom: -150px;
+            opacity: 0.0;
+        }
+        
+        .nav>li:hover{
+            background-color: lightgrey;
+            color: black;
+        }
+        .nav>li:hover ul{
+            opacity: 1;
+        }
+        /* /nav-hover /nav-a ll */
+
+
+
+        /* main article */
+        article{
+            display: inline-block;
+            width: 80%;
+            height: 500px;
+            background-color: #ddd;
+        }/* /main article */
+
+
+        /* aside */
+        aside {
+            display: inline-block;
+            width: 10%;
+            height: 500px;
+            background-color: #aaa;
+        }/* /aside */
+
+
+        /* footer */
+        footer{
+            clear:both;
+            height: 100px;
+            background-color: #777;
+        }/* /footer */
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- 머리말---------------------------------------->
+    <header>
+        <h1>글로벌아이티</h1>
+    </header><!--/머리말-->
+
+
+    <!-- Navigation ---------------------------------------->
+    <nav>
+    <ul class="nav">
+        <li><a href="#">교육원 소개</a></li>
+        <li><a href="#">교육원 연혁</a></li>
+        <li id="course"><a href="#">과정 소개</a>
+            <ul class="subnav"> 
+                <li>백엔드과정</li>
+                <li>풀스택과정</li>
+                <li>UI/UX과정</li>
+            </ul></li> 
+        <li><a href="#">Contact</a></li>
+    </ul>
+    </nav> <!-- /Navigation -->
+
+
+    <!-- aside ---------------------------------------
+    --><aside>
+        광고1
+    </aside><!-- /aside 
+    article --------------------------------------
+    --><article>
+        글로벌아이티 소개
+    </article><!-- /article 
+    aside --------------------------------------
+    --><aside>
+        광고2
+    </aside><!-- /aside -->
+
+
+    <!-- footer ---------------------------------------->
+    <footer>
+        &copy;All rights reserved by 글로벌아이티.
+    </footer><!-- /footer -->
+</body>
+</html>

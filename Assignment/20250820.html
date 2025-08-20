@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 연습문제 06</title>
+    <style>
+        /* reset */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* The content box ----------------------------------------------------------*/
+        .box{
+            margin: 5px;
+            width: 400px;
+            height: 500px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            position: relative;
+            float: left;
+        }/* /The content box */
+
+
+        /* image ------------------------------------------------------------*/
+        .box>img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } /* /image */
+
+
+        /* Greybox/textbox for writing ---------------------------------*/
+        .box>.textbox{
+            background-color: lightgrey;
+            opacity: .5;
+            border: 1px solid black;
+            box-sizing: border-box; 
+            width: 100%; 
+            height: 30%;
+            transition: 1s;
+            position: absolute;
+            bottom: 0; 
+            left: 0; 
+        }/* /Greybox/textbox for writing */
+
+
+        /* P - general writing format -----------------------------------*/
+        .textbox p {
+            text-align: center;
+            padding: 5%;
+            width: 100%;
+            box-sizing: border-box;
+        }/* /P - general writing format */
+
+        
+        /* Short ----------------------------------------------------------*/
+        .short{
+            color: black;
+            position: absolute;
+        }
+        /* Short - Erase short on hover*/
+        .box:hover .short{
+            opacity: 0;
+        }/* /Short */
+
+        /* Long ----------------------------------------------------------*/
+        .long{
+            opacity: 0;
+            position: absolute;
+        }
+        /* Long - Appear long on hover*/
+        .box:hover .long{
+            opacity: 1;
+        }/* /Long */
+
+        /* Animation ----------------------------------------------------------*/
+        .box:hover .textbox{
+            height: 100%;
+            background-color: grey;
+            opacity: .8;
+        }/* /Animation */
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="https://www.22places.com/wp-content/uploads/2025/03/eiffel-tower-paris.jpg" title="eiffel tower">
+        <div class="textbox">
+            <p class="short">Paris from above</p>
+            <p class="long"> The Eiffel Tower’s iron lattice rises over the Seine, offering sweeping Paris panoramas, nightly sparkles, and a timeless symbol of French art and engineering.</p>
+        </div>
+    </div>
+
+        <div class="box">
+        <img src="https://www.22places.com/wp-content/uploads/2025/03/pyramids-giza.jpg" title="Pyramid">
+        <div class="textbox">
+            <p class="short"> Ancient wonders in the desert</p>
+            <p class="long"> Standing on the Giza Plateau, these monumental pyramids and the Sphinx reveal the precision, power, and mystery of Egypt’s Old Kingdom legacy.</p>
+        </div>
+    </div>
+
+        <div class="box">
+        <img src="https://lp-cms-production.imgix.net/2025-03/shutterstock1454120993.jpg?auto=format,compress&q=72&w=1440&h=810&fit=crop" title="Korea">
+        <div class="textbox">
+            <p class="short">Seaside temple at sunrise</p>
+            <p class="long"> Perched on Busan’s rocky coast, Haedong Yonggungsa pairs ocean views with tranquil temple paths, lanterns, and a stunning sunrise outlook.</p>
+        </div>
+    </div>
+</body>
+</html>

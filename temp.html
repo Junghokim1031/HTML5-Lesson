@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover Overlay with Background Images</title>
+  <style>
+    .container {
+      width: 100%;
+      overflow: hidden; /* clears floats */
+    }
+
+    .box {
+      width: 30%;
+      height: 200px;
+      margin-right: 3.333%;
+      float: left;
+      position: relative;
+      box-sizing: border-box;
+      color: white; /* nice contrast with overlays */
+      background-size: cover;       /* make background cover entire box */
+      background-position: center;  /* center the background image */
+      background-repeat: no-repeat; /* prevent tiling */
+    }
+
+    /* remove margin for last box */
+    .box:last-child {
+      margin-right: 0;
+    }
+
+    /* Grey overlay */
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30%;   /* start from bottom 30% */
+      background: rgba(0, 0, 0, 0.6); /* darker transparent overlay so text shows */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    /* Default text visible before hover */
+    .overlay .default-msg {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Hover text hidden at start */
+    .overlay .hover-msg {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      position: absolute; /* overlap same spot */
+    }
+
+    /* Hover effects */
+    .box:hover .overlay {
+      height: 100%; /* fill whole box */
+    }
+    .box:hover .overlay .default-msg {
+      opacity: 0; /* fade out */
+    }
+    .box:hover .overlay .hover-msg {
+      opacity: 1; /* fade in */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- First box with its own background -->
+    <div class="box" style="background-image: url('/InClassCSS/img/cat.png');">
+      <div class="overlay">
+        <span class="default-msg">Preview</span>
+        <span class="hover-msg">Full Message!</span>
+      </div>
+    </div>
+
+    <!-- Second box has different background -->
+    <div class="box" style="background-image: url('/InClassCSS/img/cat.png');">
+      <div class="overlay">
+        <span class="default-msg">See More</span>
+        <span class="hover-msg">Detailed Info</span>
+      </div>
+    </div>
+
+    <!-- Third box has another background -->
+    <div class="box" style="background-image: url('/InClassCSS/img/cat.png');">
+      <div class="overlay">
+        <span class="default-msg">Hover Me</span>
+        <span class="hover-msg">Surprise Content!</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
