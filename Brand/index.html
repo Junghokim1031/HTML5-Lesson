@@ -7,33 +7,28 @@
     
     <!-- https allows us to access the webpage outside of server -->
     <!-- Without https:. it only runs on server -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-    <!-- in the old days, we needed prefixes on certain codes for compatibility on browsers -->
-    <!-- this allows us to not need any prefixes for certain browsers -->
-    <!-- <script type="text/javascript" src="js/prefixfree.min.js"> -->
 
-    </script>
+    <!-- https://color.adobe.com/search?q=rosegold -->
 </head>
 <body>
 
     <!-- 동영상/Background ---------------------------------------->
     <figure class="video">
-        <video loop="loop" autoplay muted>
-            <source src="img/nike.mp4" title="Background Image">
-        </video>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Z3jxYryFl3c?autoplay=1&mute=1&loop=1" title="It’s a great day for coffee :30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </figure> <!-- /동영상/Background -->
 
-    <!-- Air Nike Logo ---------------------------------------->
-    <h1><img src="img/logo2.png" title="Nike Air Max Logo" alt="Nike Air Max Logo" id="logo"></h1>
-    <!-- /Air Nike Logo -->
+    <!-- Apple Logo ---------------------------------------->
+    <h1><i class="fa-solid fa-apple-whole fa-2xl" id="logo" style="color: #00704A  ;"></i></h1>
+    <!-- / Apple Logo -->
 
     <!-- Header (Global Navigation Bar, GNB) ---------------------------------------->
     <!-- To reduce Total Overall Cost (TOC), nav should be in its own file -->
     <header>
         <ul id="gnb">
-            <li class="on"> <!-- Why use class? we can later use JQuery to move class to other listed item-->
-                <a href="#"><em><i class="fa fa-refresh fa-spin"></i>About</em></a>
+            <li class="on">
+                <a href="#"><em><i class="fa-solid fa-apple-whole"></i>About</em></a>
                 <ul>
                     <li><a href="#"><em><b>English</b></em></a></li>
                 </ul>

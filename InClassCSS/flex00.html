@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 부모 박스 */
+        .container{
+            width: 700px;
+            height: 300px;
+            /*parent element gets display:flex */
+            display: flex;             
+            /* starting value = row*/
+            flex-direction: row; 
+            background-color: #eee;
+            border: 1px solid black;
+            margin: 10px;
+            
+        }
+
+        /* 자식 박스 - odd */
+        .item{
+            background-color: orange;
+            border: 1px solid black;
+        }
+
+        /* 자식 박스 - even */
+        .itemEven{
+            background-color: lightgreen;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item"    >1</div>
+        <div class="itemEven">2</div>
+        <div class="item"    >3</div>
+        <div class="itemEven">4</div>
+        <div class="item"    >5</div>
+        <div class="itemEven">6</div>
+        <div class="item"    >7</div>
+        <div class="itemEven">8</div>
+        <div class="item"    >9</div>
+        <div class="itemEven">10</div>
+        <div class="item"    >11</div>
+        <div class="itemEven">12</div>
+        <div class="item"    >13</div>
+    </div>
+</body>
+</html>

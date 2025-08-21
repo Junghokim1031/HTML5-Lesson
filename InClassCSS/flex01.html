@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex practice 01 pg 345-352</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 부모 박스 */
+        .container{
+            width: 700px;
+            height: 300px;
+            display: flex; /*parent element gets display:flex */
+            /* starting value hence not necessary */
+            flex-direction: row; 
+            background-color: #eee;
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        /* 자식 박스 - odd */
+        .item{
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        /* 자식 박스 - even */
+        .itemEven{
+            background-color: lightgreen;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        /* 자식 박스 - noHeight for stretch */
+        .itemNoHeight{
+            background-color: lightgreen;
+            width: 100px;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid black;
+        }
+
+        
+        /* 자식박스가 출력되는 방향 -> rewriting flow-direction */
+        #opt1{flex-direction: row;}
+        #opt2{flex-direction: row-reverse;}
+        #opt3{flex-direction: column;}
+        #opt4{flex-direction: column-reverse;}
+
+        /* shorthand for flex-direction and flow-wrap */
+        #opt5{flex-flow: row wrap;}
+        
+        /* justify-content */
+        /* 자식박스 가로 방향으로 정렬 horizontal alignment */
+        #opt6{justify-content: flex-start ; } /* left */
+        #opt7{justify-content: flex-end ; }/* right */
+        #opt8{justify-content: center; } /* center */
+        #opt9{justify-content: space-around; }
+        #opt10{justify-content: space-between; }
+        #opt11{justify-content: space-evenly; }
+
+        /* tip to create navigation bar */
+        #opt12{justify-content: flex-end; }
+        #opt12>div:nth-child(1) {margin-right: auto;}
+        #opt13{justify-content: flex-end; }
+        #opt13>div:last-child {margin-left: auto;}
+
+        /* align items */
+        /* 자식박스 세로 방향으로 정렬 vertical alignment */
+        #opt14{align-items: flex-start; }
+        #opt15{align-items: flex-end; }
+        #opt16{align-items: center; }
+        #opt17{align-items: baseline; }
+        #opt18{align-items: stretch; }
+
+        /* align-self */
+        /* 부모 박스 정렬 후 자식박스를 개별적으로 정렬함. */
+        #opt19{align-items: center;}
+        #opt19>div:nth-child(1) {align-self: flex-start ;}
+        #opt19>div:nth-child(3) {align-self: stretch;}
+        #opt19>div:nth-child(5) {align-self: self-end;}
+
+        /* align-content <- vertical axis */
+        /* 세로 방향으로 자식박스가 여러줄로 출력될 때 정렬  */
+        #opt20, #opt21, #opt22, #opt23, #opt24, #opt25{flex-flow: row wrap;}
+        #opt20 {align-content: flex-start;}
+        #opt21 {align-content: flex-end ;}
+        #opt22 {align-content: center;}
+        #opt23 {align-content: space-between;}
+        #opt24 {align-content: space-around;}
+        #opt25 {align-content: stretch;}
+    </style>
+</head>
+<body>
+
+    <section id="1">
+    <!-- flex-direction row -->
+    <div class="container" id="opt1">
+        <div class="item" >1</div>
+        <div class="itemEven" >2</div>
+        <div class="item" >3</div>
+    </div>
+    <!-- flex-direction row-reverse -->
+    <div class="container" id="opt2">
+        <div class="item" >1</div>
+        <div class="itemEven" >2</div>
+        <div class="item" >3</div>
+    </div>
+    <!-- flex-direction column -->
+    <div class="container" id="opt3">
+        <div class="item">1</div>
+        <div class="itemEven">2</div>
+        <div class="item">3</div>
+    </div>
+    <!-- flex-direction column-reverse -->
+    <div class="container" id="opt4">
+        <div class="item">1</div>
+        <div class="itemEven">2</div>
+        <div class="item">3</div>
+    </div>
+    <!-- flex-flow -->
+    <div class="container" id="opt5">
+        <div class="item">1</div>
+        <div class="itemEven">2</div>
+        <div class="item">3</div>
+        <div class="itemEven">4</div>
+        <div class="item">5</div>
+        <div class="itemEven">6</div>
+        <div class="item">7</div>
+        <div class="itemEven">8</div>
+        <div class="item">9</div>
+        <div class="itemEven">10</div>
+        <div class="item">11</div>
+        <div class="itemEven">12</div>
+        <div class="item">13</div>
+    </div>
+    </section>
+
+
+
+    <section id="2">
+        <!-- justify-content: flex-start -->
+        <div class="container" id="opt6">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- justify-content: flex-end -->
+        <div class="container" id="opt7">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- justify-content: center -->
+        <div class="container" id="opt8">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- justify-content: space-around -->
+        <div class="container" id="opt9">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- justify-content: space-between -->
+        <div class="container" id="opt10">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- justify-content: space-evenly -->
+        <div class="container" id="opt11">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- justify-content + margin right -->
+        <div class="container" id="opt12" style="height: 100px;">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- justify-content + margin left -->
+        <div class="container" id="opt13" style="height: 100px;">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+    </section>
+
+
+
+    <section id="3">
+        <!-- align-items: flex-start -->
+        <div class="container" id="opt14">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- align-items: flex-end -->
+        <div class="container" id="opt15">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- align-items: center -->
+        <div class="container" id="opt16">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- align-items: baseline -->
+        <div class="container" id="opt17">
+            <div class="item">1</div>
+            <div class="itemEven" style="font-size:14px;">2</div>
+            <div class="item" style="font-size:24px;">3</div>
+            <div class="itemEven" style="font-size:34px;">4</div>
+            <div class="item" style="font-size:44px;">5</div>
+        </div>
+        <!-- align-items: stretch -->
+        <div class="container" id="opt18">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+    </section>
+
+
+
+
+    <section id="4">
+    <!-- align-self -->
+    <div class="container" id="opt19">
+        <div class="item">1</div>
+        <div class="itemEven">2</div>
+        <div class="itemNoHeight">3</div>
+        <div class="itemEven">4</div>
+        <div class="item">5</div>
+    </div>
+    </section>
+
+
+
+
+    <section id="5">
+        <!-- align-content: flex-start -->
+        <div class="container" id="opt20">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- align-content: flex-end -->
+        <div class="container" id="opt21">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- align-content: center -->
+        <div class="container" id="opt22">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+        </div>
+        <!-- align-content: space-between -->
+        <div class="container" id="opt23">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+            <div class="itemEven">6</div>
+            <div class="item">7</div>
+            <div class="itemEven">8</div>
+            <div class="item">9</div>
+            <div class="itemEven">10</div>
+            <div class="item">11</div>
+            <div class="itemEven">12</div>
+            <div class="item">13</div>
+            <div class="itemEven">14</div>
+        </div>
+        <!-- align-content: space-around -->
+        <div class="container" id="opt24">
+            <div class="item">1</div>
+            <div class="itemEven">2</div>
+            <div class="item">3</div>
+            <div class="itemEven">4</div>
+            <div class="item">5</div>
+            <div class="itemEven">6</div>
+            <div class="item">7</div>
+            <div class="itemEven">8</div>
+            <div class="item">9</div>
+            <div class="itemEven">10</div>
+            <div class="item">11</div>
+            <div class="itemEven">12</div>
+            <div class="item">13</div>
+            <div class="itemEven">14</div>
+        </div>
+        <!-- align-content: stretch -->
+        <div class="container" id="opt25">
+            <div class="itemNoHeight">1</div>
+            <div class="itemNoHeight">2</div>
+            <div class="itemNoHeight">3</div>
+            <div class="itemNoHeight">4</div>
+            <div class="itemNoHeight">5</div>
+            <div class="itemNoHeight">6</div>
+            <div class="itemNoHeight">7</div>
+            <div class="itemNoHeight">8</div>
+            <div class="itemNoHeight">9</div>
+            <div class="itemNoHeight">10</div>
+            <div class="itemNoHeight">11</div>
+            <div class="itemNoHeight">12</div>
+            <div class="itemNoHeight">13</div>
+        </div>
+    </section>
+
+    <!--  -->
+    <!-- <div class="container" id="opt">
+        <div class="item">1</div>
+        <div class="itemEven">2</div>
+        <div class="item">3</div>
+        <div class="itemEven">4</div>
+        <div class="item">5</div>
+    </div> -->
+    
+
+</body>
+</html>

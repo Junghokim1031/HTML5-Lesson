@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaQuery Practice 02 pg333</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            float: left;
+            box-sizing: border-box;
+            padding: 5px;
+            height: 300px;
+            width: 25%;
+            position: relative;
+        }
+        #box1{ background-color: red ;}
+        #box2{ background-color: yellow;}
+        #box3{ background-color: green;}
+        #box4{ background-color: black;}
+        @media screen and (max-width:1024px) {
+            .box{
+                width: 50%;
+            }
+        }
+        @media screen and (max-width:512px)   {
+            .box{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">box1</div>
+    <div class="box" id="box2">box2</div>
+    <div class="box" id="box3">box3</div>
+    <div class="box" id="box4">box4</div>
+</body>
+</html>

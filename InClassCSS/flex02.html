@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex practice 02 pg 356-363</title>
+    <style>
+        .container{
+            width: 800px;
+            border: 1px solid #222;
+            background-color: #eee;
+            margin: 10px;
+            
+            
+            /* Originally elements inherits width of parent 
+            hence the child elements becomes organized in column
+            flex changes that*/
+            display: flex;
+            /* gap between elements */
+            gap: 30px; 
+        }
+
+        .box{
+            background-color: #222;
+            /* Indicates size of box is now 150px */
+            flex-basis: 150px;
+        }
+
+        p{
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* flex-grow */
+        #box1{ flex-grow: 1;}
+        #box2{ flex-grow: 1;}
+        #box4{ flex-grow: 1;}
+
+        /* flex-shrink */
+        #container3 .box{ flex-basis: 300px; }
+        #box5 {flex-shrink: 1;}
+        #box6 {flex-shrink: 0;}
+        #box7 {flex-shrink: 1;}
+        #box8 {flex-shrink: 2;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"><p>가나다라마</p></div>
+        <div class="box"><p>가나다라마바사</p></div>
+        <div class="box"><p>ABCDE</p></div>
+    </div>
+    
+    <!-- flex-grow -->
+    <div class="container">
+        <div class="box" id="box1"><p>1</p></div>
+        <div class="box" id="box2"><p>2</p></div>
+        <div class="box" id="box3"><p>3</p></div>
+        <div class="box" id="box4"><p>4</p></div>
+    </div>
+    
+    <!-- flex-shrink -->
+    <div class="container" id="container3">
+        <div class="box" id="box5"><p>1</p></div>
+        <div class="box" id="box6"><p>2</p></div>
+        <div class="box" id="box7"><p>3</p></div>
+        <div class="box" id="box8"><p>4</p></div>
+    </div>
+    
+</body>
+</html>

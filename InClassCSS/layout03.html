@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Practice 03 (with flex) pg 355</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: url(/InClassCSS/img/bg5.jpg) no-repeat left top fixed;
+            background-size: cover;
+
+            /* Centering on vh */
+            display: flex;
+            justify-content: center; /* horizontal */
+            align-items: center; /* vertical */
+            /*  viewport height (vh) is always 100% of screen*/
+            /* height in display flex is the max size 
+            I am doing justify-content/align-items for */
+            min-height: 100vh; 
+
+            color: white;
+        }
+        button{
+            background-color: grey;
+            font-size: 1.2em;
+            padding: 10px 50px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>로그인</h1>
+        <form action="login.jsp" method="post">
+            <div>
+                ID <input type="ID" name="id">
+            </div>
+            <div>
+                Password <input type="Password" name="pw">
+            </div>
+            <div>
+                <input type="submit" value="log in">
+                <input type="submit" value="sign up">
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+</html>
