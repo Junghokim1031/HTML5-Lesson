@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap library -->
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Fluid container has no margin -->
+    <div class="container-fluid">
+        <h1>My First Bootstrap Page</h1>
+        <p>This is some text.</p>
+    </div>
+
+    <!-- Regular container has responsive margin -->
+    <div class="container">
+        <h1>My First Bootstrap Page</h1>
+        <p>This is some text.</p>
+    </div>
+
+    <!-- Practicing Grid System -->
+     <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6" style="background-color:lavender; height: 200px;"></div>
+            <div class="col-lg-3 col-md-6" style="background-color:lavenderblush;height: 200px;"></div>
+            <div class="col-lg-3 col-md-6" style="background-color:green;height: 200px;"></div>
+            <div class="col-lg-3 col-md-6" style="background-color:blue;height: 200px;"></div>
+        </div>
+        <hr>
+
+     <!-- Practicing Typography -->
+
+        <h1>h1 heading <small>secondary text</small></h1>
+        <h2>h2 heading <small>secondary text</small></h2>
+        <h3>h3 heading <small>secondary text</small></h3>
+        <h4>h4 heading <small>secondary text</small></h4>
+        <h5>h5 heading <small>secondary text</small></h5>
+        <h6>h6 heading <small>secondary text</small></h6>
+        <hr>
+
+    <!-- Practicing Typography -->
+
+        <blockquote>
+            <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+            <footer>From WWF's website</footer>
+        </blockquote>
+
+        <p>Use <kbd>ctrl + p</kbd> to open the Print dialog box.</p>
+
+        <pre>
+        Text in a pre element
+                is displayed in a fixed-width
+                font, and it preserves
+                both      spaces and
+                line breaks.
+        </pre>
+        <hr>
+    
+    <!-- practicing typogragphy -->
+
+        <h2>Contextual Colors</h2>
+        <p>Use the contextual classes to provide "meaning through colors":</p>
+        <p class="text-muted">This text is muted.</p>
+        <p class="text-primary">This text is important.</p>
+        <p class="text-success">This text indicates success.</p>
+        <p class="text-info">This text represents some information.</p>
+        <p class="text-warning">This text represents a warning.</p>
+        <p class="text-danger">This text represents danger.</p>
+        <hr>
+
+
+        <!-- Practicing springboot table -->
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+            </tr>
+            <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr>
+
+
+
+
+
+
+
+        <!-- Practicing Images -->
+        <img src="img/cat.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
+        <img src="img/cat.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"> 
+        <img src="img/cat.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> 
+        <hr>
+    
+    
+        <!-- Practicing Buttons -->
+        <a href="#" class="btn btn-info" role="button">Link Button</a>
+        <button type="button" class="btn btn-info">Button</button>
+        <input type="button" class="btn btn-info" value="Input Button">
+        <input type="submit" class="btn btn-info" value="Submit Button">
+        <hr>
+
+        <!-- Practicing Badges -->
+        <a href="#">News <span class="badge">5</span></a><br>
+        <a href="#">Comments <span class="badge">10</span></a><br>
+        <a href="#">Updates <span class="badge">2</span></a>
+        <hr>
+
+        <!-- Practicing pagination -->
+        <ul class="pagination">
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li> <!-- current Page = .active or .on class -->
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
+
+        <!-- Practicing List Group -->
+        <ul class="list-group">
+            <li class="list-group-item">First item</li>
+            <li class="list-group-item">Second item</li>
+            <li class="list-group-item">Third item</li>
+        </ul>
+        <hr>
+
+        <!-- Practicing Panel Heading/Footer/Group -->
+        <div class="panel-group">
+            <div class="panel panel-success">
+                <div class="panel-heading">Panel Header</div>
+                <div class="panel-body">Panel Content</div>
+            <div class="panel-footer">Panel Footer</div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">Panel Header</div>
+                <div class="panel-body">Panel Content</div>
+            <div class="panel-footer">Panel Footer</div>
+            </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading">Panel Header</div>
+                <div class="panel-body">Panel Content</div>
+            <div class="panel-footer">Panel Footer</div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button> <!-- Caret is the triangle thing -->
+            <ul class="dropdown-menu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+            </ul>
+        </div>
+        <hr>
+
+        <!-- Collapsible -->
+        <button data-toggle="collapse" data-target="#demo">More</button>
+        <div id="demo" class="collapse">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <hr>
+
+        <!-- Practicing Dynamic Tabs -->
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+            <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+        </ul>
+
+        <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3>HOME</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h3>Menu 1</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        </div>
+        <hr>
+
+        <!-- Praciting Form -->
+        <form action="login.php" method="post">
+            <input class="form-control" type="text" name="id" placeholder="ID"><br>
+            <input class="form-control" type="password" name="pw" placeholder="PW"><br>
+            <input class="btn-primary" type="submit" value="login">
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div> <!-- /container-->
+</body>
+</html>

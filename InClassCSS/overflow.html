@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table overflow practice</title>
+    <style>
+        #box1{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            /* overflow: hidden; */
+            /* overflow: scroll; */
+            /* whenever child element escape the parent element, scroll-bar is summoned.*/
+            overflow: auto; 
+        }
+        #box1>div{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div>
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+            content content content content content
+        </div>
+    </div>
+</body>
+</html>

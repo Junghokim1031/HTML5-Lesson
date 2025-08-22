@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid practice 01 pg 375</title>
+    <style>
+        /* pg 375,380 */
+        #container1{
+            display: grid;
+            grid-template-columns: 100px 200px 300px;
+            grid-template-rows: 50px 100px;
+            /* 380 - gap */
+            gap: 20px 30px; /*between rows, between columns */
+        }
+        /* pg 376 */
+        #container2{
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px;
+            grid-auto-rows: 50px;
+        }
+        /* pg 377 */
+        #container3{
+            width: 600px;
+            border: 1px solid;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: minmax(100px,auto);
+        }
+        /* pg 378 */
+        #container4{
+            width: 800px;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+            margin-bottom: 20px;
+            background-color: red;
+        }
+        /* pg 378 */
+        #container5{
+            width: 800px;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+            margin-bottom: 20px;
+            background-color: blueviolet;
+        }
+        .item{
+            border: 1px solid #222;
+            padding:10px;      
+            font-size: 20px;
+            text-align: center;
+        }   
+        .item:nth-child(even){
+            background-color:#ffc400;
+        }
+    </style>
+</head>
+<body>
+    <!-- grid-template practice -->
+    <div class="container" id="container1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    <hr>
+    <!-- grid auto place -->
+    <div class="container" id="container2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    <hr>
+    <!-- minmax() -->
+    <div class="container" id="container3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    <hr>
+    <!-- auto-fit -->
+    <div class="container" id="container4">
+        <div class="item">auto-fit 1</div>
+        <div class="item">auto-fit 2</div>
+        <div class="item">auto-fit 3</div>
+        <div class="item">auto-fit 4</div>
+    </div>
+    <hr>
+    <!-- auto-fill -->
+    <div class="container" id="container5">
+        <div class="item">auto-fill 1</div>
+        <div class="item">auto-fill 2</div>
+        <div class="item">auto-fill 3</div>
+        <div class="item">auto-fill 4</div>
+    </div>
+    <hr>
+</body>
+</html>
