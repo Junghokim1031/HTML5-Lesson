@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practicing Slick Slider</title>
-    
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- JQuery (for Slick Slider) -->
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> <!-- Compatibility for previous versions of JQuery-->
+  <meta charset="UTF-8">
+  <title>Slick Slider Center Mode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Slick Slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+  <style>
+    .slider-container { 
+      max-width: 1360px;
+      margin: 50px auto;
+    }
 
+    .slider .slide {
+      margin: 0 10px; /* 슬라이드 간 간격 */
+    }
 
-    <style>
-        .slick img { margin: auto; }
-    </style>
-
-    <!-- Slick Script -->
-    <script>
-        $(document).ready(function()
-        {
-            $('.slick').slick();
-        });
-    </script>
+    .slider .slide img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+ 
+  <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+        centerMode: true,
+        centerPadding: '80px', // 양쪽에 보이는 슬라이드 넓이
+        slidesToShow: 1,
+        arrows: false,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              centerPadding: '40px',
+            }
+          }
+        ]
+      });
+    });
+  </script>
 </head>
 <body>
 
-    <div class="slick">
-        <div><img src="img/bg1.jpg"></div>
-        <div><img src="img/bg2.jfif"></div>
-        <div><img src="img/bg4.jpg"></div>
-        <div><img src="img/bg5.jpg"></div>
-        <div><img src="img/kitten.jpg"></div>
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide"><img src="img/bg1.jpg" alt="background 1"></div>
+      <div class="slide"><img src="img/bg2.jfif" alt="background 2"></div>
+      <div class="slide"><img src="img/bg4.jpg" alt="background 3"></div>
+      <div class="slide"><img src="img/bg5.jpg" alt="background 4"></div>
+      <div class="slide"><img src="img/codeimg.jpg" alt="background 5"></div>
     </div>
-
+  </div>
 
 </body>
 </html>
