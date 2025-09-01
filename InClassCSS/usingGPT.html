@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Dashboard with Carousel & Contact</title>
+
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+/* Navbar hover dropdown */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  flex: 1 0 auto; /* flexible space */
+  margin-top: 56px; /* navbar height */
+  overflow: hidden;
+}
+
+/* Sidebars */
+.sidebar-left, .sidebar-right {
+  width: 20%;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  background-color: #e9ecef;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+/* Carousel custom styling */
+#customCarousel .carousel-inner {
+  overflow: visible; /* allow peek of side images */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#customCarousel .carousel-item {
+  flex: 0 0 80%; /* main image width */
+  margin: 0 10px;
+  transition: transform 0.5s ease;
+}
+
+#customCarousel img {
+  width: 100%;
+  height: 50vh; /* only fill 50% of viewport height */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Card carousel images */
+.card-carousel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    margin-top: 56px;
+  }
+  .sidebar-left, .sidebar-right {
+    width: 100%;
+    height: auto;
+  }
+  .main {
+    height: auto;
+  }
+  #customCarousel .carousel-item {
+    flex: 0 0 90%;
+    margin: 0 5px;
+  }
+  /* Ensure card carousel images are square in mobile */
+  .card-carousel img {
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Brand</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button">Menu 1</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Submenu 1</a></li>
+            <li><a class="dropdown-item" href="#">Submenu 2</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button">Menu 2</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Submenu 1</a></li>
+            <li><a class="dropdown-item" href="#">Submenu 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Layout -->
+<div class="layout">
+  <!-- Left Sidebar: carousel of 3 cards -->
+  <div class="sidebar-left order-2 order-md-1">
+    <div id="leftCardCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card card-carousel mb-3">
+            <img src="img/bg1.jpg" class="card-img-top" alt="Card 1">
+            <div class="card-body">
+              <h6 class="card-title">Card 1</h6>
+              <p class="card-text">Short description</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card card-carousel mb-3">
+            <img src="img/bg2.jfif" class="card-img-top" alt="Card 2">
+            <div class="card-body">
+              <h6 class="card-title">Card 2</h6>
+              <p class="card-text">Short description</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card card-carousel mb-3">
+            <img src="img/bg4.jpg" class="card-img-top" alt="Card 3">
+            <div class="card-body">
+              <h6 class="card-title">Card 3</h6>
+              <p class="card-text">Short description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main order-1 order-md-2">
+    <h3>Main Content</h3>
+
+    <!-- First Carousel -->
+    <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/bg1.jpg" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="img/bg2.jfif" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="img/bg4.jpg" alt="Image 3">
+        </div>
+        <div class="carousel-item">
+          <img src="img/bg5.jpg" alt="Image 4">
+        </div>
+        <div class="carousel-item">
+          <img src="img/cat.png" alt="Image 5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Carousel: 3 cards (desktop), 1 card mobile -->
+    <div id="mainCardCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner d-flex justify-content-center">
+        <div class="carousel-item active col-md-4 col-12">
+          <div class="card card-carousel">
+            <img src="img/bg1.jpg" class="card-img-top" alt="Card 1">
+            <div class="card-body">
+              <h6 class="card-title">Main Card 1</h6>
+              <p class="card-text">Short description</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4 col-12">
+          <div class="card card-carousel">
+            <img src="img/bg2.jfif" class="card-img-top" alt="Card 2">
+            <div class="card-body">
+              <h6 class="card-title">Main Card 2</h6>
+              <p class="card-text">Short description</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4 col-12">
+          <div class="card card-carousel">
+            <img src="img/bg4.jpg" class="card-img-top" alt="Card 3">
+            <div class="card-body">
+              <h6 class="card-title">Main Card 3</h6>
+              <p class="card-text">Short description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Sidebar -->
+  <div class="sidebar-right order-3">
+    <h5>Right Sidebar</h5>
+    <ul class="list-group">
+      <li class="list-group-item">Widget 1</li>
+      <li class="list-group-item">Widget 2</li>
+      <li class="list-group-item">Widget 3</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==============================
+     Contact Section
+=============================== -->
+<div class="container my-5">
+  <h2 class="mb-4">Contact</h2>
+  <div class="row">
+    <!-- Left Column: Instructions -->
+    <div class="col-12 col-md-4 mb-3">
+      <p>If you have any questions about our courses or need guidance, please fill out the form. Our team will get back to you promptly.</p>
+      <ul>
+        <li>Phone: +82 10-1234-5678</li>
+        <li>Email: info@example.com</li>
+        <li>Office Hours: Mon-Fri 9am - 6pm</li>
+      </ul>
+    </div>
+
+    <!-- Right Column: Contact Form -->
+    <div class="col-12 col-md-8">
+      <form id="contactForm">
+        <div class="row mb-3">
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="col-12 col-md-6">
+            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" name="question" rows="5" placeholder="Write your question here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="formResponse" class="mt-3"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==============================
+     Scripts
+=============================== -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Initialize first carousel
+  const carouselElement = document.getElementById('customCarousel');
+  const carousel = new bootstrap.Carousel(carouselElement, {
+    interval: 3000,
+    wrap: true,
+    ride: 'carousel',
+    touch: true
+  });
+
+  // Initialize left sidebar carousel
+  const leftCarousel = new bootstrap.Carousel(document.getElementById('leftCardCarousel'), {
+    interval: 3000,
+    wrap: true
+  });
+
+  // Initialize main card carousel for mobile only
+  const mainCardCarousel = new bootstrap.Carousel(document.getElementById('mainCardCarousel'), {
+    interval: 3000,
+    wrap: true
+  });
+
+  // Contact form submission
+  const form = document.getElementById('contactForm');
+  const responseDiv = document.getElementById('formResponse');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      question: form.question.value
+    };
+    try {
+      const res = await fetch('/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (res.ok) {
+        responseDiv.innerHTML = '<div class="alert alert-success">Thank you! Your question has been submitted.</div>';
+        form.reset();
+      } else {
+        responseDiv.innerHTML = '<div class="alert alert-danger">Submission failed. Please try again later.</div>';
+      }
+    } catch (error) {
+      console.error(error);
+      responseDiv.innerHTML = '<div class="alert alert-danger">Error submitting the form.</div>';
+    }
+  });
+</script>
+
+</body>
+</html>
