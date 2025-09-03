@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice 03</title>
+    <script>
+
+        // let userNum = parseInt(prompt("Enter a number:"));
+        // if(userNum % 3 == 0) {
+        //     alert("The number is divisible by 3 \nYou get to survive.");
+        // }else {
+        //     alert("The number is not divisible by 3.\n Goodbye");
+        //     window.close();
+        // }
+
+        // // Below B = window.close()
+        // let score = parseInt(prompt("Enter your grade"));
+        // while (isNaN(score) || score > 100 || score < 0) {
+        //     score = parseInt(prompt("I SAID, ENTER YOUR GRADE!!!"));
+        // }
+        // alert(score);
+        // if (score >= 90) {
+        //     alert("You got an A");
+        // }
+        // else if (score >= 80) {
+        //     alert("You got a B. You get to survive.");
+        // }
+        // else if (score >= 70) {
+        //     alert("You got a C. Goodbye"); 
+        //     window.close();
+        // }
+        // else if (score >= 60) {
+        //     alert("You got a D. Nobody wants you.");
+        //     window.close();
+        // }
+        // else {
+        //     alert("You got an F. Goodbye"); 
+        //     window.close();
+        // }
+
+        // let userNum = parseInt(prompt("Enter your score!"));
+        // while (isNaN(userNum) || userNum > 100 || userNum < 0) {
+        //     alert("That is not a valid score.")
+        //     userNum = parseInt(prompt("Enter your score!"));
+        // }
+
+        // (userNum%3==0)?alert("Multiple of 3"):alert("Not Multiple of 3");
+
+        // if(userNum%3 == 0) {
+        //     alert("You win!");
+        //     alert("Are you happy now?");
+        //     while(1){
+        //         alert("Why aren't you happy?");
+        //     }
+        // }else {
+        //     while(1){
+        //         alert("Not Multiple of 3");
+        //     }
+        // }
+
+        // let numOne = parseInt(prompt("Enter a number below 50:"));
+        // let numTwo = parseInt(prompt("Enter a number below 50:"));
+        // if( numOne < 10 && numTwo < 10){
+        //     alert("Both numbers are less than 10.")
+        // }
+        // else if(numOne < 10 || numTwo < 10){
+        //     alert("One of the numbers is less than 10.");
+        // }
+        // else {
+        //     alert("Both numbers are greater than 10.");
+        // }
+
+
+        // let numThree = parseInt(prompt("Enter a number below 50:"));
+        // if(!isNaN(numThree) && numThree < 50){
+        //     alert("That is a valid number.");
+        // }
+        // else {
+        //     alert("That is not a valid number.");
+        // }
+
+        // let session = prompt("관심 세션을 선택해 주세요. 1-마케팅, 2-개발, 3-디자인");
+        // switch(session) {
+        //     case "1": 
+        //         document.write("<p><strong>마케팅 세션</strong>은 201호에서<p>");
+        //         break;
+        //     case "2": 
+        //         document.write("<p><strong>개발 세션</strong>은 202호에서<p>");
+        //         break;
+        //     case "3": 
+        //         document.write("<p><strong>디자인세션</strong>은 203호에서<p>");
+        //         break;
+        //     default: 
+        //         alert("잘못 입력하였습니다."); // 1,2,3이 아니면
+        // }
+
+        // let sum=0;
+        // for(let i =0; i < 6; i++){
+        //     sum += i;
+        // }
+        // document.write(sum);
+
+        for(let i = 1; i < 10; i++){
+            document.write(`${i}단 `);
+            for(let j = 1; j < 10; j++){
+                document.write("| " + String(j).padStart(2,'0') + " x " + 
+                String(i).padStart(2,'0') + " = " + 
+                String(i*j).padStart(2,'0') + " |");
+            }
+            document.write("<br>");
+        }
+
+
+    </script>
+    <style>
+        *{
+            background-color: black;
+            color: white;
+        }
+        strong {
+            color: yellow;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

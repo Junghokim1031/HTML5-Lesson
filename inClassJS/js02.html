@@ -5,19 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Practice 02</title>
     <script>
-        let a;
-        let study = "I'm studying " + a + " JavaScript<br>";
-        let lie = `I'm studying ${a} JavaScript`;
-        document.write(study);
-        document.write(lie);
+        // let a;
+        // let study = "I'm studying " + a + " JavaScript<br>";
+        // let lie = `I'm studying ${a} JavaScript`;
+        // document.write(study);
+        // document.write(lie);
 
-        let season = ["Spring", "Summer", "Autumn", "Winter"];
-        document.write("<br>");
-        document.write(season[0] + "<br>");
-        document.write(season[1] + "<br>");
-        document.write(season[2] + "<br>");
-        document.write(season[3] + "<br>");
+        // // 배열의 이름은 Reference 임.
+        // let season = ["Spring", "Summer", "Autumn", "Winter"];
+        // document.write("<br>");
+        // document.write(season[0] + "<br>");
+        // document.write(season[1] + "<br>");
+        // document.write(season[2] + "<br>");
+        // document.write(season[3] + "<br>");
 
+        // let b; //declare an undefined
+        // c = season; //in case I want to change back into season array
+        // console.log(b); //undefined
+        // season = b; //turn season into undefined
+        // console.log(season); // undefined
+        // console.log(season[0]); //error
+
+        // //자동 형변환 또는 묵시적 형변환 (Implicit type conversion)
+        // let input = prompt("Give me int"); //get a num (as a string)
+        // console.log(input + 10 ); //input concat 10 
+        // console.log(parseInt(input) + 10); // input + 10
+        // console.log(parseFloat(input) + 10); // input + 10
+        // console.log(Number(input) + 10); // input + 10
+        // console.log(String(Number(input) + 10) + 10); // input + 10
+        // console.log(parseInt("ABC")); // Number(ABC) = NaN
+        // console.log(parseFloat("ABC")); // parseFloat(ABC) = NaN
+        
+        // // 명시적 형변화 또는 강제형변환 (Explicit type conversion)
+        // console.log(Boolean(0)); // Boolean(0)
+        // console.log(Boolean('')); // Boolean('')
+        // console.log(Boolean(null)); // Boolean(null)
+        // console.log(Boolean(undefined)); // Boolean(undefined)
+        // console.log(Boolean(NaN)); // Boolean(NaN)
+        // console.log(Boolean(1)); // Boolean(1)
+        // console.log(Boolean(-1)); // Boolean(-1)
+        // console.log(Boolean("abc")); // Boolean("abc")
+        // console.log(Boolean(" ")); // Boolean(" ")
+        // console.log(Boolean([])); // Boolean([]) -> object, hence truthsy
+        // console.log(Boolean({})); // Boolean({}) -> object, hence truthsy
+        // console.log(Boolean(function(){})); // Boolean(function(){}), object, hence thrusy
+        
+        // // int vs float vs Math.floor
+        // let divide = parseInt(15)/parseInt(2);
+        // console.log(divide); //regularly it is 7.5, a float
+        // console.log(parseInt(divide)); //with parseInt, its 7
+        // console.log(Math.floor(divide)); //with Math.floor, its 7
+        
+        // // 1함 연산자
+        // let x = 10;
+        // let y = 10;
+        // console.log(x++); //10
+        // console.log(x);   //11
+        // console.log(++y); //11
+
+        // let val1 = 10;
+        // let val2 = 20;
+        // console.log("M + N: " + (val1+val2));
+        // console.log("M - N: " + (val1-val2));
+        // console.log("M * N: " + (val1*val2));
+        // console.log("M / N: " + (val1/val2));
+        // console.log("M % N: " + (val1%val2));
+        // console.log("M ** N: " + (val1**val2));
+
+        // bool operations
+        console.log(10<20);   //true
+        console.log(10>20);   //false
+        console.log(10<=20);  //true
+        console.log(10>=20);  //false
+        console.log(10==20);  //false
+        console.log(10!=20);  //true
+        console.log(10===20); //false
+        console.log(10!==20); //true
+        console.log(10=="10"); //true
+        console.log(10==="10"); //false
+        console.log(10!=="10"); //true
+        console.log(10!="10"); //false
 
     </script>
 </head>
