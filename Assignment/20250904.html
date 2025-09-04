@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    // //1
+    // alert("1번 질문의 b의 값은 20입니다.");
+    
+    // //2
+    // alert("2번 질문의 a의 값은 10입니다.");
+
+    // //3
+    // alert("3번 질문 시작합니다.");
+    // let age = prompt("나이를 입력하시요.");
+    // while(isNaN(age)){
+    //     age = prompt("나이를 입력하시요.");
+    // }
+    // if(age < 20){
+    //     document.write("미성년자 입니다.<br>");
+    // }
+    // else{
+    //     document.write("성년입니다.<br>")
+    // }
+
+    // //4
+    // alert("4번 질문 시작합니다.");
+    // let result = parseInt(prompt("윷가락 4개를 던졌을 때 결과는 무었이였나요? (1-5)"));
+    // while(result > 6 || result <= 0 || isNaN(result) )
+    // {
+    //     alert("불가능한 결과입니다.");
+    //     result = parseInt(prompt("윷가락 4개를 던졌을 때 결과는 무었이였나요? (1-5)"));
+    // }
+    // switch(result){
+    //     case 1: 
+    //         document.write('"도"입니다.<br>');
+    //         break;
+    //     case 2: 
+    //         document.write('"개"입니다.<br>');
+    //         break;
+    //     case 3: 
+    //         document.write('"걸"입니다.<br>');
+    //         break;
+    //     case 4: 
+    //         document.write('"윷"입니다.<br>');
+    //         break;
+    //     case 5: 
+    //         document.write('"모"입니다.<br>');
+    //         break;
+    //     default:
+    //         document.write("Error<br><br><br><br><br>");
+    // }
+
+    // //5
+    // alert("5번 질문 시작합니다.");
+    // let korean = parseInt(prompt(("국어 점수를 제공하시요.")));
+    // while(korean > 100 || korean < 0 || isNaN(korean) )
+    // {
+    //     alert("불가능한 결과입니다.");
+    //     korean = parseInt(prompt(("국어 점수를 제공하시요.")));
+    // }
+    // let math = parseInt(prompt(("수학 점수를 제공하시요.")));
+    // while(math > 100 || math < 0 || isNaN(math) )
+    // {
+    //     alert("불가능한 결과입니다.");
+    //     math = parseInt(prompt(("수학 점수를 제공하시요.")));
+    // }
+    // let english = parseInt(prompt(("영어 점수를 제공하시요.")));
+    // while(english > 100 || english < 0 || isNaN(english) )
+    // {
+    //     alert("불가능한 결과입니다.");
+    //     english = parseInt(prompt(("영어 점수를 제공하시요.")));
+    // }
+    // let score = [korean,math,english];
+    // for(let i = 0; i<score.length;i++){
+    //     if(i==0){
+    //         document.write(`국어 점수는 ${score[i]} 입니다.<br>`);
+    //     }
+    //     if(i==1){
+    //         document.write(`수학 점수는 ${score[i]} 입니다.<br>`);
+    //     }
+    //     if(i==2){
+    //         document.write(`영어 점수는 ${score[i]} 입니다.<br>`);
+    //     }
+    // }
+
+    //6
+    // alert("6번 질문 시작합니다.");
+    // let students = [];
+    // while(true) {
+    //     let name = prompt("학생의 이름은 무었임니까? 추가 학생이 없으면 0 이하 숫자를 제출하시요.");
+    //     // 학생이 없으면 끝
+    //     if(parseInt(name) < 0){
+    //         break;
+    //     }
+
+    //     //국어 점수
+    //     let korean = parseInt(prompt(("국어 점수를 제공하시요.")));
+    //     while(korean > 100 || korean < 0 || isNaN(korean) )
+    //     {
+    //         alert("불가능한 결과입니다.");
+    //         korean = parseInt(prompt(("국어 점수를 제공하시요.")));
+    //     }
+
+    //     //수학 점수
+    //     let math = parseInt(prompt(("수학 점수를 제공하시요.")));
+    //     while(math > 100 || math < 0 || isNaN(math) )
+    //     {
+    //         alert("불가능한 결과입니다.");
+    //         math = parseInt(prompt(("수학 점수를 제공하시요.")));
+    //     }
+
+    //     //영어 점수
+    //     let english = parseInt(prompt(("영어 점수를 제공하시요.")));
+    //     while(english > 100 || english < 0 || isNaN(english) )
+    //     {
+    //         alert("불가능한 결과입니다.");
+    //         english = parseInt(prompt(("영어 점수를 제공하시요.")));
+    //     }
+
+    //     //학생 제조기
+    //     let student={name, korean, math, english};
+
+    //     //학생 정보 제출
+    //     // document.write(`학생의 성명은 ${student.name}입니다.<br>`);
+    //     // document.write(`국어 점수는 ${student.korean} 입니다.<br>`);
+    //     // document.write(`수학 점수는 ${student.math} 입니다.<br>`);
+    //     // document.write(`영어 점수는 ${student.english} 입니다.<br><br>`);
+
+    //     //학생부 작성
+    //     students.push(student);
+    // }
+
+    const students = [
+        { name: "Alice", en: 85, kr: 92, math: 78 },
+        { name: "Bob", en: 74, kr: 88, math: 81 },
+        { name: "Charlie", en: 90, kr: 85, math: 95 },
+        { name: "Diana", en: 68, kr: 79, math: 72 },
+        { name: "Ethan", en: 82, kr: 91, math: 87 },
+        { name: "Fiona", en: 77, kr: 83, math: 90 },
+        { name: "George", en: 89, kr: 87, math: 85 },
+        { name: "Hannah", en: 93, kr: 90, math: 88 },
+        { name: "Ian", en: 80, kr: 76, math: 79 },
+        { name: "Jane", en: 85, kr: 84, math: 92 }
+    ];
+
+    //Each student's data
+    for (let [index, student] of students.entries()) {
+        document.write(index + ": " + student.name + ", EN: " + student.en + ", KR: " + student.kr + ", Math: " + student.math + "<br>");
+    }
+
+    //Total Average of all students
+    let mathTotalScore = students.reduce((accumulator, currentStudent) => {return accumulator + currentStudent.math;},0);
+    let enTotalScore = students.reduce((accumulator, currentStudent) => {return accumulator + currentStudent.en;},0);
+    let krTotalScore = students.reduce((accumulator, currentStudent) => {return accumulator + currentStudent.kr;},0);
+    let totalavg = (mathTotalScore + enTotalScore + krTotalScore)/3/students.length;
+    document.write(`Average of total score is ${totalavg}<br><br><br>`);
+
+    //Average of each student
+    let  averages = students.map((student) => {
+        let total = student.math + student.en + student.kr;
+        return total / 3;
+    });
+    for(let i=0; i<students.length; i++){
+        document.write(students[i].name + "\'s average score is " + averages[i]+"<br>");
+    }
+
+    let filterScore = parseInt(prompt("What is the least score you are willing to accept on math?"));
+    let filteredStudents = students.filter(student => { 
+        if (student.en > filterScore){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    document.write(`<br><br><br>The Following students had english score above ${filterScore}.<br>`)
+    for(let i=0; i<filteredStudents.length; i++){
+        document.write(filteredStudents[i].name + "\'s en score is " + filteredStudents[i].en+"<br>");
+    }
+
+    document.write("<br><br><br>");
+
+    let whatToSortWith = parseInt(prompt("What score should we use to sort the students? 1. Korea 2.English 3.Math"));
+    while(isNaN(whatToSortWith) || whatToSortWith < 1 || whatToSortWith > 3){
+        alert("Out of Bounds")
+        parseInt(prompt("What score should we use to sort the students? 1. Korean 2.English 3.Math"));
+    }
+    switch(whatToSortWith){
+        case 1:
+            students.sort((a,b) => b.kr - a.kr);
+            for(let i=0; i<students.length; i++){
+                document.write(students[i].name + "\'s score is " + students[i].kr+"<br>");
+            }
+            break;
+        case 2:
+            students.sort((a,b) => b.en - a.en);
+            for(let i=0; i<students.length; i++){
+                document.write(students[i].name + "\'s score is " + students[i].en+"<br>");
+            }
+            break;
+        case 3:
+            students.sort((a,b) => b.math - a.math);
+            for(let i=0; i<students.length; i++){
+                document.write(students[i].name + "\'s score is " + students[i].math+"<br>");
+            }
+            break;
+    }
+
+    
+</script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -6,151 +6,195 @@
     <title>JavaScript Practice 01</title>
     <script>
         // // 1
-        let num = prompt("숫자를 주세요.");
-        while(isNaN(num)){ // 숫자가 맞는 지 확인함.
-            num = prompt("숫자를 주세요.");
-        }
-        if(parseInt(num)%2 == 0) { //Even
-            document.write("짝수입니다.");
-        }
-        else if (parseInt(num)%2 == 1){ //Odd
-            document.write("홀수입니다.");
-        }
-        else { // Edge case, not num
-            document.write("숫자가 아닙니다.");
-        }        
-        document.write("<br>"); //break line
+        // let num = prompt("숫자를 주세요.");
+        // while(isNaN(num)){ // 숫자가 맞는 지 확인함.
+        //     num = prompt("숫자를 주세요.");
+        // }
+        // if(parseInt(num)%2 == 0) { //Even
+        //     document.write("짝수입니다.");
+        // }
+        // else if (parseInt(num)%2 == 1){ //Odd
+        //     document.write("홀수입니다.");
+        // }
+        // else { // Edge case, not num
+        //     document.write("숫자가 아닙니다.");
+        // }        
+        // document.write("<br>"); //break line
 
 
 
-        //2
-        let korean = prompt("국어 점수 주세요.");   //국어
-        while(isNaN(korean) || korean == null || korean == ""){                   
-            korean = prompt("국어 점수 주세요.");   //국어 확인
-        }
-        let english = prompt("영어 점수 주세요.");  //영어
-        while(isNaN(english) || english == null || english == ""){
-            english = prompt("영어 점수 주세요.");  //영어 확인
-        }
-        let math = prompt("수학 점수 주세요.");     //수학
-        while(isNaN(math) || math == null || math == ""){
-            math = prompt("수학 점수 주세요.");     //수학 확인
-        }
-        //평균
-        let avg = (parseInt(korean) + parseInt(english) + parseInt(math))/3;
-        document.write("국어, 영어, 수학의 평균 점수는 " + avg + " 입니다");
-        document.write("<br>"); //break line
+        // //2
+        // let korean = prompt("국어 점수 주세요.");   //국어
+        // while(isNaN(korean) || korean == null || korean == ""){                   
+        //     korean = prompt("국어 점수 주세요.");   //국어 확인
+        // }
+        // let english = prompt("영어 점수 주세요.");  //영어
+        // while(isNaN(english) || english == null || english == ""){
+        //     english = prompt("영어 점수 주세요.");  //영어 확인
+        // }
+        // let math = prompt("수학 점수 주세요.");     //수학
+        // while(isNaN(math) || math == null || math == ""){
+        //     math = prompt("수학 점수 주세요.");     //수학 확인
+        // }
+        // //평균
+        // let avg = (parseInt(korean) + parseInt(english) + parseInt(math))/3;
+        // document.write("국어, 영어, 수학의 평균 점수는 " + avg + " 입니다");
+        // document.write("<br>"); //break line
 
 
 
-        //3
-        //i가 1 부터 100까지 증가함
-        for(let i = 1; i <= 100; i++){ 
-            document.write(String(i).padStart(3,'0') + "\t");
-            if(i%10 == 0){ //10 숫자마다 줄바꿈
-                document.write("<br>");
-            }
-        } 
-        document.write("<br>");
+        // //3
+        // //i가 1 부터 100까지 증가함
+        // for(let i = 1; i <= 100; i++){ 
+        //     document.write(String(i).padStart(3,'0') + "\t");
+        //     if(i%10 == 0){ //10 숫자마다 줄바꿈
+        //         document.write("<br>");
+        //     }
+        // } 
+        // document.write("<br>");
 
 
 
-        //4
-        //i가 100 부터 1까지 감소함
-        for(let i = 100; i >= 1; i--){ 
-            document.write(String(i).padStart(3,'0') + " ");
-            if(i%10 == 1){ //10 숫자마다 줄바꿈
-                document.write("<br>");
-            }
-        } 
-        document.write("<br>");
+        // //4
+        // //i가 100 부터 1까지 감소함
+        // for(let i = 100; i >= 1; i--){ 
+        //     document.write(String(i).padStart(3,'0') + " ");
+        //     if(i%10 == 1){ //10 숫자마다 줄바꿈
+        //         document.write("<br>");
+        //     }
+        // } 
+        // document.write("<br>");
 
 
 
-        //5
-        for(let i = 1; i < 10; i++){
-            // 명 추가
-            document.write(`${i}단:  `);
-            for(let j = 1; j < 10; j++){
-                // j * i = j*i를 j 만큼 반복
-                document.write("|" + String(j).padStart(2,'0') + " x " + 
-                String(i).padStart(2,'0') + " = " + 
-                String(i*j).padStart(2,'0') + "|");
-            } //1줄 완료 시 breakline
-            document.write("<br>");
-        }
-        document.write("<br>");
+        // //5
+        // for(let i = 1; i < 10; i++){
+        //     // 명 추가
+        //     document.write(`${i}단:  `);
+        //     for(let j = 1; j < 10; j++){
+        //         // j * i = j*i를 j 만큼 반복
+        //         document.write("|" + String(j).padStart(2,'0') + " x " + 
+        //         String(i).padStart(2,'0') + " = " + 
+        //         String(i*j).padStart(2,'0') + "|");
+        //     } //1줄 완료 시 breakline
+        //     document.write("<br>");
+        // }
+        // document.write("<br>");
 
-        //* right triangle
-        for (let i = 1; i <= 10; i++){
-            // i를 변경하지 않도록 iStar에 저장
-            let iStar = i;
-            while(iStar > 0){
-                // i 또는 iStar 수 만큼 별 출력
-                document.write("*");
-                iStar--;
-            }// breakline
-            document.write("<br>");
-        }
+        // //* right triangle
+        // for (let i = 1; i <= 10; i++){
+        //     // i를 변경하지 않도록 iStar에 저장
+        //     let iStar = i;
+        //     while(iStar > 0){
+        //         // i 또는 iStar 수 만큼 별 출력
+        //         document.write("*");
+        //         iStar--;
+        //     }// breakline
+        //     document.write("<br>");
+        // }
         
         // * diamond
-        for(let i = 20; i >= 1; i-=2)
-        {
-            //별 왼쪽에 빈칸 작성 &nbsp가 너무 작아 2개 사용함.
-            // 왼쪽에 빈칸 반 (i/2)
-            let iSpace = Math.floor(i/2);
-            while(iSpace > 0){
-                document.write("&nbsp&nbsp");
-                iSpace--;
+        // for(let i = 20; i >= 1; i-=2)
+        // {
+        //     //별 왼쪽에 빈칸 작성 &nbsp가 너무 작아 2개 사용함.
+        //     // 왼쪽에 빈칸 반 (i/2)
+        //     let iSpace = Math.floor(i/2);
+        //     while(iSpace > 0){
+        //         document.write("&nbsp&nbsp");
+        //         iSpace--;
+        //     }
+        //     //별 출력
+        //     let iStar = 20;
+        //     while(iStar >= i)
+        //     {
+        //         //iStar과 i의 차이 만큼 출력.
+        //         // i-=2 이니까 1줄당 별 2개씩 증가
+        //         document.write("*");
+        //         iStar--;
+        //     }
+        //     //오른쪽에 빈칸 반
+        //     iSpace = Math.floor(i/2);
+        //     while(iSpace > 0){
+        //         document.write("&nbsp&nbsp");
+        //         iSpace--;
+        //     }
+        //     document.write("<br>")
+        // }
+        // // i를 0에서 시작함으로 1줄 추가 
+        // for(let i = 0; i <= 20; i+=2)
+        // {
+        //     //빈칸수는 0에서 10으로 증가해야 함으로 위에 시작 숫자를 뒤집고
+        //     // iSpace는 같이 유지함.
+        //     // 0,1,2,3,4,5,6,7,8,9,10
+        //     // i+=2인 이유는 별 숫자를 위하여. 
+        //     //대신 space에서 "/2"로 조성됨
+        //     let iSpace = Math.floor(i/2);
+        //     while(iSpace > 0){
+        //         document.write("&nbsp&nbsp");
+        //         iSpace--;
+        //     }
+        //     let iStar = 20;
+        //     while(iStar >= i)
+        //     {
+        //         //iStar과 i의 차이 만큼 출력.
+        //         // i+=2 이니까 1줄당 별 2개씩 증가
+        //         document.write("*");
+        //         iStar--;
+        //     }
+        //     // 빈칸 오른쪽에 반복
+        //     iSpace = Math.floor(i/2);
+        //     while(iSpace > 0){
+        //         document.write("&nbsp&nbsp");
+        //         iSpace--;
+        //     }
+        //     document.write("<br>");
+        // }
+
+        let i=1;
+        let j=2;
+        // i is number of row. as well as controls for spacing on the left of pyramid.
+        for(let k=4;k>=0;k--){
+            //Write space on the left side of shape
+            let kSpace = k;
+            while(kSpace>0){
+                document.write("0");
+                kSpace--;
             }
-            //별 출력
-            let iStar = 20;
-            while(iStar >= i)
-            {
-                //iStar과 i의 차이 만큼 출력.
-                // i-=2 이니까 1줄당 별 2개씩 증가
-                document.write("*");
+            
+            //first we need i stars
+            iStar = i //1            
+            while(iStar > 0) {
+                document.write("1");
                 iStar--;
             }
-            //오른쪽에 빈칸 반
-            iSpace = Math.floor(i/2);
-            while(iSpace > 0){
-                document.write("&nbsp&nbsp");
-                iSpace--;
+            //break line after i number of stars
+            document.write("<br>");
+
+            
+
+            //then we need to take account for second line of stars in a loop
+            jStar = i-j;  //-1
+            //in the first loop, we need to continue in order to not crash
+            if(jStar < 0) {
+                continue;
             }
-            document.write("<br>")
-        }
-        // i를 0에서 시작함으로 1줄 추가 
-        for(let i = 0; i <= 20; i+=2)
-        {
-            //빈칸수는 0에서 10으로 증가해야 함으로 위에 시작 숫자를 뒤집고
-            // iSpace는 같이 유지함.
-            // 0,1,2,3,4,5,6,7,8,9,10
-            // i+=2인 이유는 별 숫자를 위하여. 
-            //대신 space에서 "/2"로 조성됨
-            let iSpace = Math.floor(i/2);
-            while(iSpace > 0){
-                document.write("&nbsp&nbsp");
-                iSpace--;
+
+            //Write space on the left side of shape
+            kSpace = k;
+            while(kSpace>0){
+                document.write("0");
+                kSpace--;
             }
-            let iStar = 20;
-            while(iStar >= i)
-            {
-                //iStar과 i의 차이 만큼 출력.
-                // i+=2 이니까 1줄당 별 2개씩 증가
-                document.write("*");
-                iStar--;
-            }
-            // 빈칸 오른쪽에 반복
-            iSpace = Math.floor(i/2);
-            while(iSpace > 0){
-                document.write("&nbsp&nbsp");
-                iSpace--;
-            }
-            document.write("<br>")
-        }
 
 
+            while(iStar > 0) {
+                document.write("2");
+                jStar--;
+            }
+            //break line after i number of stars
+            document.write("<br>");
+            i+=2;
+        }
         
 
     </script>

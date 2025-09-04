@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function Practice 01</title>
+    <script>
+        // //addnum prompt in method
+        // function addNumber(){
+        //     let num1 = parseInt(prompt("Give me a number"));
+        //     let num2 = parseInt(prompt("Give me a number"));
+        //     let sum = num1 + num2;
+        //     alert(`결과값: ${sum}`);
+        //     return sum;
+        // }
+        // addNumber();
+
+        // //addnum prompt in parameters
+        // function addNumber(num1, num2){
+        //     let sum = num1 + num2;
+        //     alert(`결과값: ${sum}`);
+        //     return sum;
+        // }
+        
+        // //addnum prompt outside (in argument)
+        // let num1 = parseInt(prompt("Give me a number"));
+        // while(isNaN(num1)){
+        //     num1 = parseInt(prompt("Give me a number"));
+        // }
+        // let num2 = parseInt(prompt("Give me a number"));
+        // while(isNaN(num2)){
+        //     num2 = parseInt(prompt("Give me a number"));
+        // }
+        // console.log(addNumber(num1, num2));
+
+        // //default value 
+        // //used from EC6/JavaScript
+        // function multiple(a,b=1,c=2){
+        //     return a*b*c;
+        // }
+
+        // console.log(multiple(parseInt(prompt("Give me a number"))));
+
+        // //함수 표현식 anonymous function 활용
+        // let sum = function(a,b) { return a+b;}
+        // let num1 = parseInt(prompt("Give me a number"));
+        // while(isNaN(num1)){
+        //     num1 = parseInt(prompt("Give me a number"));
+        // }
+        // let num2 = parseInt(prompt("Give me a number"));
+        // while(isNaN(num2)){
+        //     num2 = parseInt(prompt("Give me a number"));
+        // }
+        // document.write(`함수 실행 결과: ${sum(num1,num2)}`);
+
+        // // 즉시 실행 함수.
+        // // 함수 선언 = 호출하는 함수
+        // // 익명 함수 사용
+        // (function(a,b){
+        //     console.log("비로 호출");
+        //     console.log(a);
+        //     console.log(b);
+        // })(10,20);
+
+        //Arrow/Lambda functions
+        let hi = () => {return alert("hi")};
+        let hello = (user) => {document.write(user + "님, 안녕하세요.")}
+        let sum = (a,b) => a+b; //automatically returned
+
+        hi();
+        hello("me");
+        console.log(sum(1,2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
