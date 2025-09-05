@@ -34,16 +34,116 @@
         // }
         
         // 빈배열
-        let colors = [];
-        colors[0] = "red";
-        colors[1] = "blue";
-        colors[2] = "green";
+        // let colors = [];
+        // colors[0] = "red";
+        // colors[1] = "blue";
+        // colors[2] = "green";
 
-        for(let i = 0; i<colors.length; i++){
-            console.log(colors[i]);
-        }
+        // for(let i = 0; i<colors.length; i++){
+        //     console.log(colors[i]);
+        // }
 
+        // 배열
+        // let numbers = new Array(); // Array 사용
+        // numbers.push(10); // 배열의 요소 추가
+        // numbers.push(20);
+        // numbers.push(30);
+        // numbers.push(40);
+        // numbers.push(50);
+        // numbers.push(60);
+        // for(let i = 0; i<numbers.length; i++){
+        //     console.log(numbers[i]);
+        // }
+
+        // // concat()
+        // let nums = [];
+        // nums.push(10);
+        // nums.push(20);
+        // nums.push(30);
+        // let chars = [];
+        // chars.push("a");
+        // chars.push("b");
+        // chars.push("c");
+        // chars.push("d");
+        // let result = nums.concat(chars);
+        // //console.log(result);
+        // // for(let i = 0; i<result.length; i++){
+        // //     console.log(result[i]);
+        // // }
+
+        // //join()
+        // let resultString = result.join(); //default value = CSV (Comma Separated Values)
+        // console.log(resultString);
+        // console.log(result); // the array does not change
+
+        // //push()
+        // let pushPractice = [1,2,3];
+        // console.log(pushPractice.push(4));  //returns length
+        // console.log(pushPractice.push(5,6));  //returns length
+        // console.log(pushPractice);
+
+        // //unshift
+        // let unshiftPractice = [1,2,3];
+        // console.log(unshiftPractice.unshift(0)); //returns length
+        // console.log(unshiftPractice);
+
+        // //pop()
+        // let popPractice = [1,2,3];
+        // console.log(popPractice.pop()); //returns last element
+        // console.log(popPractice);
+
+        // //shift()
+        // let shiftPractice = [1,2,3];
+        // console.log(shiftPractice.shift()); //returns first element
+        // console.log(shiftPractice);
+
+        // //splice - 1 arg
+        // let splicePractice = [1,2,3,4,5];
+        // console.log(splicePractice.splice(3)); 
+        // //from index (3) onword is deleted
+        // //return deleted elements in an array
+        // console.log(splicePractice);
+        // console.log(`---------------------------------------------------`);
+
+        // //splice - 2 arg
+        // splicePractice = [1,2,3,4,5];
+        // console.log(splicePractice.splice(1,2));  
+        // //from index (1) delete 2 elements
+        // //return deleted elements in an array
+        // console.log(splicePractice);
+        // console.log(`---------------------------------------------------`);
+
+        // //splice - 3 arg
+        // splicePractice = [1,2,3,4,5];
+        // console.log(splicePractice.splice(2,2,10,20,30,40,50));
+        // //from index (2) delete 2 elements (2,3)
+        // //return deleted elements in an array
+        // console.log(splicePractice);
+        // // modified splicePractice
+        // console.log(`---------------------------------------------------`);
         
+        // //splice - 3 arg with no delete
+        // splicePractice = [1,2,3,4,5];
+        // console.log(splicePractice.splice(2,0,10,20,30,40,50));
+        // //from index (2) delete 0 elements
+        // //return deleted elements in an array  <- empty array
+        // console.log(splicePractice);
+        // // modified splicePractice
+        // console.log(`---------------------------------------------------`);
+
+
+        //slice
+        let slicePractice = [1,2,3,4,5];
+        let sliceResult = slicePractice.slice(3);   //slice from index 3 
+        console.log(sliceResult);                   // [4,5]
+        console.log(slicePractice);
+
+        slicePractice = [1,2,3,4,5];
+        sliceResult = slicePractice.slice(1,4);     // from index 1 to index 3
+        console.log(sliceResult);                   // [2,3,4]
+        console.log(slicePractice);
+
+
     </script>
 </head>
 <body>

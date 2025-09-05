@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler Practice 01 pg 583</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <!-- <a herf="#" onClick="alert('링크을 클릭하였습니다.')">Green</a> -->
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a herf="#" onClick="changeBG('green')">Brown</a><br>
+        </li>
+        <li>
+            <a herf="#" onClick="changeBG('orange')">Green</a><br>
+        </li>
+        <li>
+            <a herf="#" onClick="changeBG('purple')">Orange</a><br>
+        </li>
+        <li>
+            <a herf="#" onClick="changeBG('blue')">Purple</a><br>
+        </li>
+        <li>
+            <a herf="#" onClick="changeBG('pink')">Blue</a><br>
+        </li>
+        <li>
+            <a herf="#" onClick="changeBG('brown')">Pink</a><br>
+        </li>
+    </ul>
+    <div id="result">javascript</div>
+
+    <script>
+        function changeBG (color){
+            let result =document.querySelector('#result'); // <= ID selector
+            // ID가 result인것을 찾는다.
+            result.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>

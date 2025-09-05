@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Practice</title>
+    <script>
+        for(let i=0;i<50;i++){
+            //window.open("notice.html","","width=500px, height=500px,left=700px,top=300px,resizable=yes,scrollbars=yes");
+            //팝업 이름이 없으면 다수 팝업 생성 가능
+            //이름이 있으면 1개 only
+        }
+        let newWin = window.open("notice.html","notice","width=500px, height=500px,left=700px,top=300px,resizable=yes,scrollbars=yes");
+        if(newWin == null){
+            for(let i=0;i<50;){
+               alert("팝업이 차단되었습니다.");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
