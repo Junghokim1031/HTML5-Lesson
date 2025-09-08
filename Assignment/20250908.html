@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            position: absolute;
+        }
+
+        #container{
+            width: 100%;
+            position: relative;
+        }
+
+        .moveRight{
+            /* transform: translateX(1600px);
+            transition: 1s; */
+            right: 0px;
+        }
+    </style>
+    <script>
+        // 1
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = (now.getMonth()+1).toString().padStart(2, '0');
+        let day = (now.getDate()+1).toString().padStart(2, '0');
+        document.write(`${year}-${month}-${day}<br><br>`);
+
+        //2
+        for(let i=0;i<20;i++){
+            let randomNum = Math.floor(Math.random()*20+1);
+            document.write(randomNum+" ");
+        }
+        document.write("<br><br>");
+
+        //3
+        document.addEventListener('DOMContentLoaded',function(){
+            let google = document.getElementById('google');
+            google.addEventListener('click',function(){
+                window.open("https://www.google.com");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button type="button" id="google">Google</button>
+    <br><br>
+
+
+    <script>
+        //4
+        let numArray = [];
+        numArray.push(1);
+        numArray.push(2);
+        numArray.push(3);
+        numArray.push(4);
+        numArray.push(5);
+
+        for(let i=0;i<numArray.length;i++){
+            document.write(`${numArray[i]} `);
+        }
+        document.write("<br><br>");
+
+        //5
+        numArray.push(6);
+        numArray.push(7);
+        numArray.push(8);
+        numArray.push(9);
+        numArray.push(10);
+
+        for(let i=0;i<numArray.length;i++){
+            document.write(`${numArray[i]} `);
+        }
+        document.write("<br><br>");
+
+        //6
+        let student = [];
+        student.push("김정호");
+        student.push("심리학");
+        student.push('2015');
+        document.write(student.join(',') + "<br><br>");
+
+        //7
+        document.write("인스턴스란 내장 객체(Class)를 이용하여 만든 객체 (실체)입니다. 내장 객체와는 다르게 Property 변경 및 Method이용이 가능합니다.<br><br>");
+        //8
+        document.addEventListener('DOMContentLoaded',()=>{
+            let box = document.getElementsByClassName('box');
+            box[0].addEventListener('click',()=>{
+                // box.classList.add("animate__animated", "animate__slideInLeft");
+                box[0].classList.add("moveRight");
+            })
+        });
+    </script>
+    <div id="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

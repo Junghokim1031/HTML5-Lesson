@@ -162,10 +162,12 @@
         let total = student.math + student.en + student.kr;
         return total / 3;
     });
+    //print each student's average score
     for(let i=0; i<students.length; i++){
         document.write(students[i].name + "\'s average score is " + averages[i]+"<br>");
     }
 
+    //Filter students using minimum score on math. 
     let filterScore = parseInt(prompt("What is the least score you are willing to accept on math?"));
     let filteredStudents = students.filter(student => { 
         if (student.en > filterScore){
@@ -175,6 +177,7 @@
             return false;
         }
     })
+    //print filtered students
     document.write(`<br><br><br>The Following students had english score above ${filterScore}.<br>`)
     for(let i=0; i<filteredStudents.length; i++){
         document.write(filteredStudents[i].name + "\'s en score is " + filteredStudents[i].en+"<br>");
@@ -182,11 +185,15 @@
 
     document.write("<br><br><br>");
 
+    //find out what score we are sorting with
     let whatToSortWith = parseInt(prompt("What score should we use to sort the students? 1. Korea 2.English 3.Math"));
     while(isNaN(whatToSortWith) || whatToSortWith < 1 || whatToSortWith > 3){
         alert("Out of Bounds")
         parseInt(prompt("What score should we use to sort the students? 1. Korean 2.English 3.Math"));
     }
+    //use switch to sort based on correct score
+    //looking back on it, i could have used students[whatToSortWith-1] with correct order
+    //all scores are largest -> smallest
     switch(whatToSortWith){
         case 1:
             students.sort((a,b) => b.kr - a.kr);
@@ -208,7 +215,30 @@
             break;
     }
 
-    
+    //find out what score we are sorting with
+    let whatToSortTopWith = parseInt(prompt("Which test's top scorer do you wish to know? 1. Korea 2.English 3.Math"));
+    while(isNaN(whatToSortTopWith) || whatToSortTopWith < 1 || whatToSortTopWith > 3){
+        alert("Out of Bounds")
+        parseInt(prompt("Which test's top scorer do you wish to know? 1. Korean 2.English 3.Math"));
+    }
+    //use switch to sort based on correct score
+    //looking back on it, i could have used students[whatToSortWith-1] with correct order
+    //all scores are largest -> smallest
+    switch(whatToSortTopWith){
+        case 1:
+            students.sort((a,b) => b.kr - a.kr);
+            document.write(`The top Korean scorer is ${students[0].name}.`);
+            break;
+        case 2:
+            students.sort((a,b) => b.en - a.en);
+            document.write(`The top English scorer is ${students[0].name}.`);
+            break;
+        case 3:
+            students.sort((a,b) => b.math - a.math);
+            document.write(`The top Math scorer is ${students[0].name}.`);
+            break;
+    }
+
 </script>
 </head>
 <body>

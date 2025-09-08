@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Practice 03</title>
+</head>
+<body>
+    <button type="button" id="btn">추가</button>
+    <button type="button" id="btnDel">추가</button>
+    <ul id="itemList">
+    </ul>
+
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', ()=>{
+            let newLi = document.createElement('li');
+            let textNode = document.createTextNode('JavaScript');
+            newLi.append(textNode);
+            document.getElementById('itemList').appendChild(newLi);
+        })
+
+        let btnDel = document.getElementById('btnDel');
+        btnDel.addEventListener('click', ()=>{
+            let itemList = document.getElementById('itemList');
+            itemList.removeChild(itemList.lastChild);
+        })
+    </script>
+</body>
+</html>

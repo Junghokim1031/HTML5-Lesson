@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js" integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            //change BG color
+            let bgBlue = document.getElementById('bgBlue');
+            bgBlue.addEventListener('click',()=>{
+                document.body.style.backgroundColor = 'blue';
+            });
+            let bgGray = document.getElementById('bgGray');
+            bgGray.addEventListener('click',()=>{
+                document.body.style.backgroundColor = 'gray';
+            });
+            let bgGreen = document.getElementById('bgGreen');
+            bgGreen.addEventListener('click',()=>{
+                document.body.style.backgroundColor = 'green';
+            });
+            let bgRed = document.getElementById('bgRed');
+            bgRed.addEventListener('click',()=>{
+                document.body.style.backgroundColor = 'red';
+            });
+
+            //erase text
+            let erase = document.getElementById('erase');
+            erase.addEventListener('click',()=>{
+                let text = document.getElementsByTagName('blockquote');
+                text[0].style.opacity="0";
+            });
+            
+            //write text
+            let write = document.getElementById('write');
+            write.addEventListener('click',()=>{
+                let text = document.getElementsByTagName('blockquote');
+                text[0].style.opacity="1";
+            });
+
+            //track what they are writing
+            let keyTracker = document.getElementById('spyware');
+            let textArea = document.getElementById('textLocation');
+            keyTracker.addEventListener('keydown',(event)=>{
+                textArea.textContent = event.target.value;
+                if(event.target.value === "x"){
+                    window.close();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="btn-group mx-2 my-2">
+        <button id="bgBlue" type="button" class="btn btn-primary">BLUE</button>
+        <button id="bgGray" type="button" class="btn btn-secondary">GRAY</button>
+        <button id="bgGreen" type="button" class="btn btn-success">GREEN</button>
+        <button id="bgRed" type="button" class="btn btn-danger">RED</button>
+        <button id="erase" type="button" class="btn btn-info">Erase Text</button>
+        <button id="write" type="button" class="btn btn-outline-info">Write Text</button>
+    </div>
+        
+    <blockquote id="text">
+        Fusce id dolor porta, accumsan neque vel, porta libero. Aliquam elementum quam est, id mattis metus mollis in. Etiam sed erat sit amet ex vestibulum commodo pretium a mi. Vivamus nisi erat, congue ut justo ut, suscipit convallis arcu. Mauris a varius libero. Sed rhoncus lectus sed elit ullamcorper, sit amet ornare lorem convallis. Vivamus aliquet velit id convallis venenatis. Quisque eu imperdiet dolor, id consequat risus. In rutrum metus vel neque pharetra laoreet. Phasellus tincidunt tellus orci, vel facilisis lorem tincidunt nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mauris eu sapien vulputate feugiat non nec nisl. Vivamus id nibh nisi. Duis tincidunt sem vel nisi porttitor auctor. Etiam dignissim nibh elit, non faucibus purus pharetra id. Donec venenatis, dui at mattis malesuada, diam lorem tristique magna, quis tempor quam mauris eu turpis.
+    </blockquote>
+
+    <textarea id="spyware" rows="4" cols="50" placeholder="Write here. Nothing suspicous at all."></textarea>
+    <p id="textLocation"></p>
+
+</body>
+</html>

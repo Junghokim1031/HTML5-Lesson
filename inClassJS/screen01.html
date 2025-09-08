@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Screen Practice 01 pg 626</title>
+    <script>
+        /* Note - Latest trend is to use modal rather than pop-up (window.open). */
+        function openCenter(doc, win, width, height)
+        {
+            let left = (screen.availWidth-width)/2;
+            let top = (screen.availHeight-height)/2
+            window.open(doc,win,`width=${width},height=${height},left=${left},top=${top}`);
+        }
+        
+
+        let newWin = openCenter("notice.html","notice",500,400);
+        if(newWin == null){
+            for(let i=0;i<50;i++){
+               alert("팝업이 차단되었습니다.");
+            }
+        }
+        
+        // document.write(`<p><b>screen.availWidth: </b> ${screen.availWidth}</p>`)
+        // document.write(`<p><b>screen.availHeight: </b> ${screen.availHeight}</p>`)
+        // document.write(`<p><b>screen.width: </b> ${screen.width}</p>`)
+        // document.write(`<p><b>screen.height: </b> ${screen.height}</p>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

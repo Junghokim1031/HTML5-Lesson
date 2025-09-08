@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Practice 02 pg 644</title>
+</head>
+<body>
+    <div>
+        <img src="img/cat.jpg" alt="cat" title="cat" id="cat" style="width:300px;height:300px">
+        <img src="img/kitty-1.png" alt="cat" title="cat" id="cat2" style="width:300px;height:300px">
+    </div>
+    <script>
+        let cat = document.getElementById("cat");
+        let cat2 = document.getElementById("cat2")
+        /*Event handling with anonymous function (익명함수)
+        cat.onclick = ()=> alert('이미지를 클릭하였습니다.');
+        
+        Event handling with anonymous function (익명함수)
+        cat.onclick = function(){
+            alert('이미지를 클릭하였습니다.');
+        }
+
+        function alertFunc(){
+                cat.src = "img/kitty-2.png";
+                alert('이미지를 클릭하였습니다.');
+        }        
+        cat.onclick = alertFunc;*/
+
+        //utilizing event and new properties
+        /*cat.onclick = function(event){
+            let xTot=event.clientX;
+            let yTot=event.clientY;
+            let xNow=event.pageX;
+            let yNow=event.pageY;
+            let xScreen=event.screenX;
+            let yScreen=event.screenY;
+            console.log(`Current viewport loc: ${xTot},${yTot}.`);
+            console.log(`Current page loc: ${xNow},${yNow}.`);
+            console.log(`Current screen: ${xScreen},${yScreen}.`);
+        }
+
+        cat.onclick = function(event){
+            alert(`this image is located at ${this.src}`);
+        }*/
+
+        // addEventListener w/anonymous function
+        // arrow
+        cat.addEventListener("mouseover",()=>{
+            cat.src="img/kitty-2.png";
+        });
+        cat.addEventListener("mouseout",()=>{
+            cat.src="img/cat.jpg";
+        });
+        //not arrow
+        cat2.addEventListener("mouseover", function(){
+            cat2.src="img/kitty-2.png";
+        });
+        cat2.addEventListener("mouseout", function(){
+            cat2.src="img/kitty-1.png";
+        });
+    </script>
+</body>
+</html>

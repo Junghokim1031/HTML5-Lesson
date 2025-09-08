@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript CSS Animation through Animate CSS Lib 01</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css"/>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            let btn = document.getElementById('btn');
+            btn.addEventListener('click',function(){
+                let title = document.getElementById('title');
+                title.classList.add('animate__animated', 'animate__bounce');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="animate__animated animate__bounce">Animate Css</h1>
+    <button id="btn" type="button">버튼</button>
+    <h1 id="title">Animate Css</h1>
+</body>
+</html>
