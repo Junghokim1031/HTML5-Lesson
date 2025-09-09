@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation Practice 01</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#animate').click(function(){
+
+                //this is called chaining
+                $('.box').animate({height: '300px',opacity: '0.4'}, "slow")
+                .animate({width: '300px',opacity: '1.0'}, "slow")
+                .animate({height: '100px',opacity: '0.4'}, "slow")
+                .animate({width: '100px',opacity: '1.0'}, "slow");
+                // $('.box').animate({
+                //     height: '300px',
+                //     opacity: '0.4'
+                // }, "slow");
+                // $('.box').animate({
+                //     width: '300px',
+                //     opacity: '1.0'
+                // }, "slow");
+                // $('.box').animate({
+                //     height: '100px',
+                //     opacity: '0.4'
+                // }, "slow");
+                // $('.box').animate({
+                //     width: '100px',
+                //     opacity: '1.0'
+                // }, "slow");
+            });
+            
+            //stops after current animation ends
+            $('#stop').click(function(){
+                $('.box').stop();
+            });
+
+            //Stop all: true, goto End: false
+            //  모든 애니메이션(큐 포함) 종료, 현재 애니메이션의 마지막 상태로 가지 않음
+            $('#stopNow').click(function(){
+                $('.box').stop(true,false);
+            });
+
+            //Stop all: true, goto End: false
+            // 모든 애니메이션(큐 포함)을 종료하며, 현재 진행 중인 애니메이션은 마지막 상태로 직행
+            $('#stopAll').click(function(){
+                $('.box').stop(true,true);
+            });
+            //Stop all: false, goto End: true
+            //현재 애니메이션만 중지하고 진행 중인 애니메이션은 마지막 상태로 이동함
+            $('#stopTemp').click(function(){
+                $('.box').stop(false,true);
+            });
+            //same as stop()
+            // 즉 현재 애니메이션만 중지, 큐는 유지, 마지막 상태로 이동하지 않음
+            $('#stopstop').click(function(){
+                $('.box').stop(false,false);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="animate">animate()</button>
+    <button id="stop">stop()</button>
+    <button id="stopNow">stop(true,false)</button>
+    <button id="stopAll">stop(true,true)</button>
+    <button id="stopTemp">stop(false,true)</button>
+    <button id="stopstop">stop(false,false)</button>
+    <br>
+    <br>
+    <div class="box"></div>
+    
+</body>
+</html>

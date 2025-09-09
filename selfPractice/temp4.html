@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            padding: 30px;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded",()=>{
@@ -48,11 +55,14 @@
             //track what they are writing
             let keyTracker = document.getElementById('spyware');
             let textArea = document.getElementById('textLocation');
+            let logger = [];
             keyTracker.addEventListener('keydown',(event)=>{
                 textArea.textContent = event.target.value;
-                if(event.target.value === "x"){
+                logger.push(event.key);
+                if(event.key === "x"){
                     window.close();
                 }
+                console.log(event.key);
             });
         });
     </script>
@@ -71,7 +81,7 @@
         Fusce id dolor porta, accumsan neque vel, porta libero. Aliquam elementum quam est, id mattis metus mollis in. Etiam sed erat sit amet ex vestibulum commodo pretium a mi. Vivamus nisi erat, congue ut justo ut, suscipit convallis arcu. Mauris a varius libero. Sed rhoncus lectus sed elit ullamcorper, sit amet ornare lorem convallis. Vivamus aliquet velit id convallis venenatis. Quisque eu imperdiet dolor, id consequat risus. In rutrum metus vel neque pharetra laoreet. Phasellus tincidunt tellus orci, vel facilisis lorem tincidunt nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mauris eu sapien vulputate feugiat non nec nisl. Vivamus id nibh nisi. Duis tincidunt sem vel nisi porttitor auctor. Etiam dignissim nibh elit, non faucibus purus pharetra id. Donec venenatis, dui at mattis malesuada, diam lorem tristique magna, quis tempor quam mauris eu turpis.
     </blockquote>
 
-    <textarea id="spyware" rows="4" cols="50" placeholder="Write here. Nothing suspicous at all."></textarea>
+    <textarea id="spyware" rows="4" cols="50" placeholder="Write here. Nothing suspicous at all. Press X to quit."></textarea>
     <p id="textLocation"></p>
 
 </body>

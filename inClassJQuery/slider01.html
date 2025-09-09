@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript jQuery Slider Practice 01</title>
+    
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .animation-canvas{
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider-panel{
+            width: 3000px;
+            position: relative;
+        }
+        .slider-image{
+            float: left;
+            width: 600px;
+            height: 400px;
+        }
+        .control-panel{
+            position: absolute;
+            bottom: 10px;
+            left: 220px;
+            overflow: hidden;
+            color: red;
+        }
+        .dot{
+            font-size: 60px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+          $(document).ready(function(){
+            // 슬라이더를 움직여주는 함수
+            function moveSlider(index){
+                //왼쪽으로  index*600px만큼 이동
+                let willMoveLeft = -(index * 600); 
+                //animate silder-panel left slowly to transition images
+                $('.slider-panel').animate({ left: willMoveLeft }, 'slow');
+                };
+            //  indicator 클릭 시 실행
+            $(".dot").click(function(){
+                console.log($(this).index());
+                //$(this).index()는 click 이벤트가 발생한 dot의 index를 반환
+                moveSlider($(this).index());
+            });
+          });
+    </script>
+
+</head>
+<body>
+    <div class="animation-canvas">
+        <div class="slider-panel">
+            <img src="img/cat1.jpg" alt="cat picture 1" class="slider-image">
+            <img src="img/cat2.jpg" alt="cat picture 2" class="slider-image">
+            <img src="img/cat3.jpg" alt="cat picture 3" class="slider-image">
+            <img src="img/cat4.jpg" alt="cat picture 4" class="slider-image">
+            <img src="img/cat5.jpg" alt="cat picture 5" class="slider-image">
+        </div>
+        <div class="control-panel" style="text-align: center;">
+            <span class="dot">*</span>
+            <span class="dot">*</span>
+            <span class="dot">*</span>
+            <span class="dot">*</span>
+            <span class="dot">*</span>
+        </div>
+    </div>    
+</body>
+</html>

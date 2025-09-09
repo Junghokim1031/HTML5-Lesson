@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Practice 01</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+            // //Pilot jQuery
+            // $("#btn").click(function(){
+            //     $("p").hide();
+            // });
+
+            // //event handler
+            // $('p').dblclick(function(){
+            //     $(this).hide();
+            // })
+
+            // //mouseenter, mouseleave, mousedown, mouseup
+            // $('p').mousedown(function(){
+            //     //note p is a block
+            //     alert("You entered p!");
+            // });
+            
+            // //hover
+            // $('p').hover(
+            //     //think of this as mouseenter
+            //     function(){
+            //     alert("You entered p!");
+            //     //if you want to use hide, don't forget to put hide on parent, not p to ensure it stays hidden
+            //     },
+            //     //think of this as mouseleave
+            //     function(){
+            //         alert("You are leaving P!");
+            //     }
+            // );
+
+            // //focus/blur
+            // $('input').focus(function(){
+            //     $(this).css("background-color","yellow");
+            // });
+            // $('input').blur(function(){
+            //     $(this).css("background-color","white");
+            //     $(this).css("border","1px solid #777");
+            //     $(this).css("border-radius","2px");
+            // });
+
+            //on
+            $('p').on({
+                //because this is an object, utilzie colon and comma instead.
+                mouseenter:function(){
+                    $(this).css("background-color","blue");
+                },
+                mouseleave:function(){
+                    $(this).css("background-color","red");
+                },
+                click:function(){
+                    $(this).css("background-color","yellow");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery Practice</h1>
+    <p>jQuery</p>
+    <p>jQuery</p>
+    <button id="btn">click to erase all &lt;p&gt;&lt;/p&gt;</button>
+    <br><br>
+
+    <input type="text" name="name">
+</body>
+</html>

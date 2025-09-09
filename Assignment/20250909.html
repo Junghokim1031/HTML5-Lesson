@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practice Assignment 01</title>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* reset style */
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* 1번 질문 */
+        #changeColor{
+            margin-left: 30px;
+        }
+
+        /* 2번 질문 박스 */
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            position: relative;
+            margin-left: 30px;
+        }
+
+        /* 3번 질문 - Accordion 관련 제목 및 내용 스타일 */
+        .title{
+            /* 크기 */
+            height: 50px;
+            /* 색상 */
+            background-color: white;
+            border: 1px solid black;
+            /* 포인터 */
+            cursor: pointer;
+            /* 마진 */
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+        .content{
+            /* 크기 */
+            height: 150px;
+            /* 색상 */
+            background-color: white;
+            border: 1px solid black;
+            /* 마진 */
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        /* 4번 질문 관련 스타일 */
+        .background,
+        .background img{
+            /* 마진 조정 */
+            margin-left: 30px;
+            /* 크기 */
+            width: 600px;
+            height: 600px;
+            /* caption을 위한 포지션 */
+            position: relative;
+        }
+
+        /* 이미지 마진 조정 */
+        .background img{
+            margin-left: 0px;
+        }
+
+        /* 글 위 caption 스타일 */
+        .background .caption{
+            /* 포지션 및 위치 */
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            /* 크기 */
+            height: 200px;
+            width: 100%;
+            /* 색상 */
+            background-color: gray;
+            opacity: .5;
+        }
+
+        .background .hiddenContent{
+            /* 포지션 및 위치 */
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            /* 크기 */
+            height: 200px;
+            width: 100%;
+            /* 색상 */
+            background-color: white;
+            opacity: .8;
+        }
+    </style>
+    
+    <script>
+        //jQuery start
+        $(document).ready(function(){
+            //1 
+            $('#changeColor').click(()=>{
+                document.body.style.backgroundColor="green";
+            });
+            $('#changeColorRandom').click(()=>{
+                //색상 선택
+                let red = Math.floor(Math.random()*255+1);
+                let green = Math.floor(Math.random()*255+1);
+                let blue = Math.floor(Math.random()*255+1);
+                //배경색 변경
+                $('body').css("background-color",`rgb(${red},${green},${blue})`);
+            });
+
+            // 2
+            // 애니메이션 방향
+            let moveLeft = false;
+            // 클릭 시
+            $('.box').click(()=>{
+                // 오른쪽으로 300px
+                if(moveLeft == false){
+                    $('.box').animate({left: '300px'});
+                    moveLeft = true;
+                }
+                // 또는 왼쪽으로 300px
+                else{
+                    $('.box').animate({left: '0px'});
+                    moveLeft = false;
+                }
+            });
+
+            // 3
+            // 제목 클릭 시
+            $('.title').click(()=>{
+                // 내용물이 토글됨
+                $('.content').slideToggle();
+            });
+
+            // 4
+            // 애니메이션 방향
+            let visible  = false;
+            // 시작 컨디션 설정
+            $('.hiddenContent').animate({
+                opacity:'0'
+            });
+
+            
+            $('.background').click(()=>{
+                //클릭 시 팝업
+                if(visible == false){
+                    $('.hiddenContent').animate({
+                        height: "600px", //크기 조정
+                        opacity: '.8',  //투명도 조정
+                        top: '0px' //위치 조정
+                        
+                    });
+                    //캡션  투명도 설정
+                    $('.caption').animate({
+                        opacity: '0'
+                    });
+                    visible=true;
+                }
+                // 또는 클릭 시 사라짐
+                else{
+                    $('.hiddenContent').animate({
+                        height: "200px", //크기 조정
+                        opacity: '.0', //투명도 설정
+                        top:"400px" //위치 조정
+                    });
+                    //캡션  투명도 설정
+                    $('.caption').animate({
+                        opacity: '0.5'
+                    });
+                    visible=false;
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 1 -->
+    <br>
+    <button id="changeColor">배경 변경</button>
+    <button id="changeColorRandom">Random 배경 변경</button>
+    <br>
+    <br>
+
+    <!-- 2 -->
+    <div class="box"></div>
+    <br>
+    <br>
+
+    <!-- 3 -->
+    <h1 class="title">Accordion 재목</h1>
+    <p class="content">내용입니다.</p>
+    <br>
+    <br>
+
+    <!-- 4 -->
+    <div class="background">
+        <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg" alt="">
+        <div class="caption">content here</div>
+        <div class="hiddenContent"><p>Fusce id dolor porta, accumsan neque vel, porta libero. Aliquam elementum quam est, id mattis metus mollis in. Etiam sed erat sit amet ex vestibulum commodo pretium a mi. Vivamus nisi erat, congue ut justo ut, suscipit convallis arcu. Mauris a varius libero. Sed rhoncus lectus sed elit ullamcorper, sit amet ornare lorem convallis. Vivamus aliquet velit id convallis venenatis. Quisque eu imperdiet dolor, id consequat risus. In rutrum metus vel neque pharetra laoreet. Phasellus tincidunt tellus orci, vel facilisis lorem tincidunt nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mauris eu sapien vulputate feugiat non nec nisl. Vivamus id nibh nisi. Duis tincidunt sem vel nisi porttitor auctor. Etiam dignissim nibh elit, non faucibus purus pharetra id. Donec venenatis, dui at mattis malesuada, diam lorem tristique magna, quis tempor quam mauris eu turpis.</p></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript jQuery Practice 03</title>
+    
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            //getters
+            console.log($('h1').text());
+            console.log($('h1').html());
+            
+            //setters
+            console.log($('h1').text('제이쿼리'));
+            console.log($('h1').html('<b><em>제이쿼리</b></em>'));
+
+            //setter <- replace placeholder
+            console.log($('input').val('홍길동'));
+
+            //getter
+            $('#btn1').click(function(){
+                console.log($('input').val());
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1>jQuery h1
+        <messageslikethisarehiddenlikeninja>
+
+        </messageslikethisarehiddenlikeninja>
+        <br><br><br>
+    </h1>
+
+    <input name="name" placeholder="name"><button id="btn1">등록</button>
+</body>
+</html>
