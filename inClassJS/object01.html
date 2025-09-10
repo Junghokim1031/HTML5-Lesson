@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object creation practice 01</title>
+
+    <script>
+        //객체 생성
+        {} // <= empty object
+        // let person = {
+        //     name: 'Dave',
+        //     profession: 'Full Stack Dev',
+        //     hobby: 'Agile',
+        //     age: '20',
+        //     gender: 'Male'
+        // };
+        // console.log(person.name);
+        // person.name = 'Jack';
+        // console.log(person.name);
+        
+        let student = {
+            name:'Alice',
+            degree:['Computer Science','Human Computer Interaction'],
+            age: '20'
+        }
+        let student2 = {
+            name: 'Brian',
+            degree: ['Software Engineering'],
+            age: '42'
+        }
+        let students= [];
+        students.push(student);
+        students.push(student2);
+
+        for(let i=0;i<students.length;i++){
+            console.log(students[i].name);
+            console.log(students[i].age);
+            for(let j=0;j<students[i].degree.length;j++){
+                console.log(students[i].degree[j]);
+            }
+        }
+        let books= [
+            { 
+                name: 'JavaScript Theory',    
+                author: 'a',
+                price: '25000'
+            },
+            { 
+                name: 'AI Theory',    
+                author: 'b',
+                price: '30000'
+            }
+        ]
+        for(let i=0;i<books.length;i++){
+            console.log(books[i].name);
+            console.log(books[i].author);
+            console.log(books[i].price);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

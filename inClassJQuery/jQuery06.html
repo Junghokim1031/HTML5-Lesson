@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practice 06</title>
+    <!-- jQueryCDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <style>
+    .ancestors div,
+    .ancestors ul,
+    .ancestors li,
+    .ancestors span { 
+            display: block;
+            background-color: white;
+            border: 2px solid lightgrey;
+            color: black;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    
+    <script>
+    $(document).ready(function(){
+        // Find every parents between span and div (excluding div itself)
+        // Then, change the CSS style
+        $("span").parentsUntil("body").css({"background-color": "red", "border": "2px solid black"});
+        // Find the immediate parent of span, then change CSS
+        $("span").parent().css({"background-color": "blue", "border": "2px solid blue"});
+        // for all parents of span, change CSS
+        $("span").parents().css({"color": "orange"});
+    });
+    </script>
+</head>
+
+<body class="ancestors"> body (great-great-grandparent)
+    <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)  
+            <li>li (direct parent)
+                <span>span</span>
+            </li>
+        </ul>   
+    </div>
+</body>
+
+</html>

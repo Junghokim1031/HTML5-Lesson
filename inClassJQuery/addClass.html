@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery CSS Class Practice</title>
+    
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .title{
+            font-size: 3rem;
+            color: red;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            //with id
+            $('#add').click(()=>{
+                $('h1').addClass('title');
+            });
+            $('#remove').click(()=>{
+                $('h1').removeClass('title');
+            });
+            $('#toggle').click(()=>{
+                $('h1').toggleClass('title');
+            });
+            // without id
+            // $('button').eq(0).click(()=>{
+            //     $('h1').addClass('title');
+            // });
+            // $('button').eq(1).click(()=>{
+            //     $('h1').removeClass('title');
+            // });
+            // $('button').eq(2).click(()=>{
+            //     $('h1').toggleClass('title');
+            // });
+
+            $('div').hover(
+                function(){
+                    $('h1').addClass('title');
+                },
+                function(){
+                    $('h1').removeClass('title');
+                }
+            )
+        });
+    </script>
+
+</head>
+<body>
+    <button id="add">addClass()</button>
+    <button id="remove">removeClass()</button>
+    <button id="toggle">toggleClass()</button>
+    <div><h1>jQuery</h1></div>
+</body>
+</html>

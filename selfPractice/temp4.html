@@ -56,8 +56,11 @@
             let keyTracker = document.getElementById('spyware');
             let textArea = document.getElementById('textLocation');
             let logger = [];
-            keyTracker.addEventListener('keydown',(event)=>{
+            keyTracker.addEventListener('input', (event) => {
                 textArea.textContent = event.target.value;
+            });
+
+            keyTracker.addEventListener('keydown', (event) => {
                 logger.push(event.key);
                 if(event.key === "x"){
                     window.close();

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practice 07</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .descendants * { 
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            // find span descendants who are 'span'
+            $("div").find("span").css({"color": "red", "border": "2px solid red"});
+            $('div').next().css({"color": "blue", "border": "2px solid blue"});
+            $('div').nextAll().css({"font-size": "50px"});
+            $('div').prev().css({"color": "green", "border": "2px solid green"})
+            $('div').prevAll().css({"background-color": "orange"})
+        });
+    </script>
+</head>
+<body>
+
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+    </ul>
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+    </ul>
+    <div class="descendants" style="width:500px;">div (current element) 
+        <p>p (child)
+            <span>span (grandchild)</span>   
+        </p>
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p> 
+    </div>
+    <span>span</span>
+    <span>span</span>
+</body>
+</html>

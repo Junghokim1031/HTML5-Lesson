@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript jQuery Slider Practice 01</title>
+    
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* reset */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /* Canvas */
+        .animation-canvas{
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        /* Slider */
+        .slider-panel{
+            width: 3000px;
+            position: relative;
+        }
+        /* Slider Images */
+        .slider-image{
+            float: left;
+            width: 600px;
+            height: 400px;
+        }
+        /* Dot group */
+        .control-panel{
+            position: absolute;
+            bottom: 10px;
+            left: 220px;
+            overflow: hidden;
+            color: red;
+        }
+        /* Dots */
+        .dot{
+            font-size: 60px;
+            cursor: pointer;
+        }
+        /* Arrows */
+        .arrow{
+            position: absolute;
+            font-size: 2rem;
+            top: 180px;
+            cursor: pointer;
+            z-index: 1;
+            font-weight: bold;
+            color: white;
+        }
+        /* Left Arrow Location */
+        #prev{
+            left: 10px;
+        }
+        /* Right Arrow Location */
+        #next{
+            right: 10px;
+        }
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            // ==========================================================================================================
+            // SET UP
+            // ==========================================================================================================
+            let currIndex = $(this).index();
+            // 이것을 변경해주지 않으면 첫번째 #next에서 오류가 발생함.
+            currIndex =0;
+            console.log(`current Index is located at ${currIndex}`);
+
+
+
+            // ==========================================================================================================
+            // 함수
+            // ==========================================================================================================
+            // 슬라이더를 움직여주는 함수
+            function moveSlider(index){
+                //왼쪽으로  index*600px만큼 이동
+                let willMoveLeft = -(index * 600); 
+                //animate silder-panel left slowly to transition images
+                $('.slider-panel').animate({ left: willMoveLeft }, 'slow');
+            };
+
+
+
+            // ==========================================================================================================
+            // Dynamic Movement
+            // ==========================================================================================================
+
+            //  indicator 클릭 시 실행
+            $(".dot").click(function(){
+                currIndex = $(this).index();
+                console.log(`current Index is located at ${currIndex}`);
+                //$(this).index()는 click 이벤트가 발생한 dot의 index를 반환
+                moveSlider($(this).index());
+            });
+
+            // ==========================================================================================================
+
+            //To previous photo
+            $("#prev").click(function(){
+                // 이전 사진에 갈 수 있도록 currIndex변경
+                currIndex--;
+                // 첫 사진일 경우, 마지막 사진으로 이동
+                if(currIndex < 0){
+                    currIndex = 4;
+                }
+                console.log(`current Index is located at ${currIndex}`);
+                // 이동
+                moveSlider(currIndex);
+            });
+
+            // ==========================================================================================================
+
+            //To next photo
+            $("#next").click(function(){
+                // 다음 사진에 갈 수 있도록 currIndex변경
+                currIndex++;
+                // 마지막 사진일 경우, 첫 사진으로 이동
+                if(currIndex > 4){
+                    currIndex = 0;
+                }
+                console.log(`current Index is located at ${currIndex}`);
+                // 이동
+                moveSlider(currIndex);
+            });
+            // ==========================================================================================================
+
+        });
+    </script>
+
+</head>
+<body>
+    <!-- Carousel -->
+    <div class="animation-canvas">
+        <!-- slider panel -->
+        <div class="slider-panel">
+            <!-- Slider Images -->
+            <img src="https://cdn.pixabay.com/photo/2020/10/05/10/51/cat-5628953_1280.jpg" alt="cat picture 1" class="slider-image">
+            <img src="https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782_1280.jpg" alt="cat picture 2" class="slider-image">
+            <img src="https://cdn.pixabay.com/photo/2018/01/03/19/17/cat-3059075_1280.jpg" alt="cat picture 3" class="slider-image">
+            <img src="https://cdn.pixabay.com/photo/2016/09/05/21/37/cat-1647775_1280.jpg" alt="cat picture 4" class="slider-image">
+            <img src="https://cdn.pixabay.com/photo/2022/03/27/11/23/cat-7094808_1280.jpg" alt="cat picture 5" class="slider-image">
+        </div>
+        <!-- Dots -->
+        <div class="control-panel" style="text-align: center;">
+            <span class="dot">*</span>
+            <span class="dot">*</span>
+            <span class="dot">*</span>
+            <span class="dot">*</span>
+            <span class="dot">*</span>
+        </div>
+        <!-- Arrows -->
+        <div class="arrows">
+            <span id="prev" class="arrow">&larr;</span>
+            <span id="next" class="arrow">&rarr;</span>
+        </div>
+    </div>    
+</body>
+</html>

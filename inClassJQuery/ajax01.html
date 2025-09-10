@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Practice 01</title>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            //CSV 처리
+            $('#btn1').click(function(){
+                $.ajax({
+                    url:'data.txt',
+                    //서버에서 응답(success)이 왔을때 실행할 함수
+                    success:function(data){ 
+                        // $('#box1').text(data);
+                        let arr=data.split(',');
+                        console.log(arr);
+                        for(let i=0;i<(arr.length-2);i+=3){
+                            $('#box1').append("이름:"+arr[i]+","+"주소:"+arr[i+1]+","+"학과:"+arr[i+2]+'<br>');
+                        }
+                    }
+                });
+            });
+
+            //XML 처리
+            $('#btn2').click(function(){
+                $.ajax({
+                    url:"data.xml",
+                    success:function(data){
+                        //confirming our data exist
+                        console.log(data);
+                        //now to parse the data
+                        let str="이름:"+$(data).find("name").text()+","
+                                +"주소:"+$(data).find("address").text()+","
+                                +"학과:"+$(data).find("department").text();
+                        $("#box2").text(str);
+                    }
+                });
+            });
+
+            //JSON 처리
+            $('#btn3').click(function(){
+                $.ajax({
+                    url:"data.json",
+                    success:function(data){
+                        console.log(data);
+                        let str="이름:"+data.name+","
+                                +"주소:"+data.address+","
+                                +"학과:"+data.department;
+                        $("#box3").text(str);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn1">CSV</button>
+    <button id="btn2">XML</button>
+    <button id="btn3">JSON</button>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+</html>

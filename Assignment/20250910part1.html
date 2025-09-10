@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practice Assignment 02</title>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                    url:'https://www.data.go.kr/catalog/15029361/fileData.json',
+                    success:function(data){
+                        console.log(data);
+                        console.log(typeof data);
+                        let obj = JSON.parse(data);
+                        document.write("Name: " + obj.name+"<br>"); 
+                        document.write("Description: " + obj.description); 
+                    }
+                });
+            });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
