@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script>
+        let string;
+        let latitude;
+        let longitude;
+
+        let option= {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        }
+
+        // If I click on the button, the following code runs
+        function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error,option);
+        } else {
+            string = "Geolocation is not supported by this browser.";
+            document.getElementById("demo").innerHTML = string;
+        }
+        }
+
+        // If getCurrentPosition is successful, the following code runs
+        function success(position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            console.log("Latitude: " + latitude);
+            console.log("Longitude: " + longitude);
+            console.log("Accuracy: " + position.coords.accuracy);
+            // if I want to print out my Lat, Long and Accuracy into screen
+            // document.getElementById("demo").innerHTML = string;
+            $.ajax({
+                url: `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&timezone=auto&current=temperature_2m,relative_humidity_2m`,
+                // data: {},
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log("Weather data");
+                    console.log(data);
+                    // Process and display the data as needed
+                    const temperature = data.current.temperature_2m;
+                    const humidity = data.current.relative_humidity_2m;
+                    let result = "Temperature:" + temperature + "<br>" +
+                                "Humidity:" + humidity;
+                    document.getElementById("demo").innerHTML = result;
+                    // console.log("Temperature:", temperature);
+                    // console.log("Humidity:", humidity);
+                }
+            });
+        }
+
+        // if getCurrentPosition is not successful, the following code runs
+        function error() {
+            alert("Either the permission was not granted or location is unavailable.");
+        }
+
+        
+
+    </script>
+</head>
+<body>
+    <button onclick="getLocation()">Get Location</button>
+    <div id="demo"></div>
+
+</body>
+</html>

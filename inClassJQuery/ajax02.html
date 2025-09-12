@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Practice 02</title>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $.ajax({
+                    url: 'https://www.data.go.kr/catalog/15029361/fileData.json',
+                    type: 'GET', // 요청 방식은 GET 방식으로    
+                    dataType: 'json', // 받는 데이터는 JSON 형태로
+                    success: function(data){
+                        console.log(data);
+                        // document.write(`${data.name}<br>`);
+                        // document.write(`${data.description}<br>`);
+                        $('#div1').text(`${data.name}:${data.description}`);
+                    },
+                    // 실패시 처리할 내용   
+                    error: function(request, status, error){
+                        
+                        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    }
+                }); // /ajax()
+            }); // /click()
+        }); // /ready()
+    </script>
+</head>
+<body>
+    <button id="btn1">Click Me</button>
+    <div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Practice 01</title>
+    <script>
+        let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        let length = alphabet.length;
+        document.write(length); 
+
+        // // \b - backspace
+        // let str = 'abc\bdef';
+        // document.write(str + '<br>');
+
+        // // \f - form feed
+        //  str = 'abc\fdef';
+        // document.write(str + '<br>');
+
+        // // \n - newline
+        //  str = 'abc\ndef';
+        // document.write(str + '<br>');
+        
+        // // \r - carriage return
+        //  str = 'abc\rdef';
+        // document.write(str + '<br>');
+
+        // // \t - tab
+        //  str = 'abc\tdef';
+        // document.write(str + '<br>');
+
+        // // \v - vertical tab
+        //  str = 'abc\vdef';
+        // document.write(str + '<br>');
+
+        // str = 
+        // `who let the dogs out?
+        // They 
+        // are 
+        // barking 
+        // at 
+        // littlechildren~`;
+        // console.log(str);
+        // document.write(str);
+
+        let x = "John"; // string
+        let y = new String("John"); // object
+        console.log(x);
+        console.log(y); //literally shows up as a array of ch
+        console.log(typeof x);
+        console.log(typeof y);
+        console.log(x == y);
+        console.log(x === y);
+
+        let txt1 = "Hello";
+        let txt2 = "world";
+        let HelloWorld = txt1.concat(" ", txt2);
+        console.log(HelloWorld);
+
+
+        //string manipulation
+        alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        console.log(alphabet);
+        console.log("substr(5,10): "+ alphabet.substr(5,10)); //include 10 digits
+        console.log("substr(5,10): "+ alphabet.substring(5,10));  //no 10th index
+        console.log("slice(5,10): "+ alphabet.slice(5,10)); //no 10th index
+        console.log("substr(-10,10): "+ alphabet.substr(-10,10)); //last 10 digits = no -10th digit
+        console.log("slice(-10): "+ alphabet.slice(-10)); //last 10 digits = no -10th digit
+        console.log("slice(-10,-5): "+ alphabet.slice(-10,-5)); //no -5th digit
+        console.log(alphabet);
+
+        let txt3 = "              "+ HelloWorld;
+        console.log(txt3);
+        console.log(txt3.trim());
+
+        let fileName = 'list.html';
+        let arr = fileName.split('.');
+        console.log(arr);
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(alphabet.indexOf('t')); //19
+        console.log(alphabet.indexOf('0')); //-1
+        console.log(alphabet.indexOf('jk')); //9
+        console.log(alphabet.indexOf('j')); //9 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

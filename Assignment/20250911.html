@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment 04</title>
+
+    <script>
+        //1
+        let name = "hongkildong";
+        document.write(`홍길동 영문 이름의 길이는 ${name.length}글자 입니다.<br>`);
+
+        //2
+        let birthday = "941031-0000000";
+        document.write(`생일은 ${birthday.slice(0, 6)}입니다.<br>`);
+
+        //3 
+        let mobile = '010-1234-5678';
+        let mobileCSV = [];
+        mobileCSV = mobile.split('-');
+        for(let i=0;i<mobileCSV.length;i++){
+            document.write(`전화번호의 ${i+1}번째 자리는 ${mobileCSV[i]} 입니다.<br>`);
+        }
+
+        //4 
+        // replaceAll()을 사용하여 '-'를 제거합니다.
+        let mobileNum = mobile.replaceAll('-','');
+        document.write(`전화번호에서 '-'를 제거하면 ${mobileNum}이 됩니다.<br>`);
+
+        //5
+        // 소나타 객체를 생성합니다.
+        sonata = { color: '', price: '', year: '' };
+        // 새로운 인스턴스를 생성합니다.
+        let newCar = sonata;
+        // 인스턴스의 속성을 변경합니다.
+        newCar.color = 'white';
+        newCar.price = '25,000,000';
+        newCar.year = '2020';
+        // 변경된 속성을 출력합니다.
+        document.write(`새로운 소나타의 색상은 ${newCar.color}입니다.<br>`);
+        document.write(`새로운 소나타의 가격은 ${newCar.price}원입니다.<br>`);
+        document.write(`새로운 소나타의 연식은 ${newCar.year}년입니다.<br>`);
+
+
+
+        //6
+        //점수를 받습니다.
+        let korean = parseInt(prompt('국어 점수(0 - 100)를 입력하세요'));
+        // 점수가 0 - 100 밖 또는 숫자가 아닐 경우 다시 받습니다.
+        while(korean > 100 || korean < 0 || isNaN(korean)){
+            alert('숫자(0 - 100)를 입력하세요');
+            korean = parseInt(prompt('국어 점수(0 - 100)를 입력하세요'));
+        }
+        // 점수를 받습니다.
+        let english = parseInt(prompt('영어 점수(0 - 100)를 입력하세요'));
+        // 점수가 0 - 100 밖 또는 숫자가 아닐 경우 다시 받습니다.
+        while(english > 100 || english < 0 || isNaN(english)){
+            alert('숫자(0 - 100)를 입력하세요');
+            english = parseInt(prompt('영어 점수(0 - 100)를 입력하세요'));
+        }
+        // 점수를 받습니다.
+        let math = parseInt(prompt('수학 점수(0 - 100)를 입력하세요'));   
+        // 점수가 0 - 100 밖 또는 숫자가 아닐 경우 다시 받습니다.
+        while(math > 100 || math < 0 || isNaN(math)){
+            alert('숫자(0 - 100)를 입력하세요');
+            math = parseInt(prompt('수학 점수(0 - 100)를 입력하세요'));
+        }
+        // 평균을 구하고 출력합니다.
+        let average = Math.floor((korean + english + math) / 3)+1;
+        document.write(`평균 점수는 ${average}입니다.<br>`);
+
+        //7 
+        // 아이디를 받습니다.
+        let id = prompt('아이디를 입력하세요. 아이디는 8-12글자 입니다').trim();
+        // 아이디 길이를 확인합니다.
+        while(id.length < 8 || id.length > 12){
+            // 길이가 틀릴경우 ID를 다시 받습니다.
+            alert('id 길이가 맞지 않습니다. 다시 입력하세요');
+            id = (prompt('아이디를 입력하세요. 아이디는 8-12글자 입니다').trim());
+        }
+        // 길이가 맞으면 출력합니다.
+        document.write(`당신의 아이디는 ${id}입니다<br>`);
+
+        //8
+        //이메일을 받습니다.
+        let email = prompt('이메일을 입력하세요.').trim();
+        //이메일이라면 @이 하나 존재합니다, 그리하여 .split결과물이 2개인지 확인합니다.
+        let emailCheck = email.split('@');
+        // 2개가 아니면 다시 이메일 주소를 받습니다.
+        while(emailCheck.length != 2){
+            alert('이메일이 아닙니다. 다시 입력하세요');
+            email = prompt('이메일을 입력하세요.').trim();
+            emailCheck = email.split('@');
+        }
+        // 이메일 주소를 받았다면 출력합니다.
+        document.write(`당신의 이메일은 ${email}입니다.`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

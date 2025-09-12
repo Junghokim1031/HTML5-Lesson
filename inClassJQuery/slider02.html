@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        .animation_canvas  {
+                overflow:hidden;
+                position:relative;          
+                width:600px; 
+                height:400px;
+            }
+
+        /* Slider Panel */
+        .slider_panel { 
+            width:600px;
+            position:relative; 
+        }
+        .slider_image { 
+            position:absolute;
+            left:0;
+            top:0;
+            width:600px; 
+            height:400px;
+        }
+
+        /* 이미지의 z-index를 다르게 해서 카드처럼 보이게 함 */
+        .slider_image:nth-child(1){z-index: 5;} 
+        .slider_image:nth-child(2){z-index: 4;} 
+        .slider_image:nth-child(3){z-index: 3;} 
+        .slider_image:nth-child(4){z-index: 2;} 
+        .slider_image:nth-child(5){z-index: 1;} 
+
+        /* Control Panel */
+        .control_panel  {
+            position:absolute; 
+            bottom:10px;; 
+            left:270px;
+            overflow:hidden; 
+            color:white;
+            z-index: 9999 !important;
+        }
+
+        
+
+        .dot{
+            font-size:30px;
+            cursor:pointer;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+
+            var prevIndex=0;
+            
+            
+            // 슬라이더를 움직여주는 함수
+            function moveSlider(index){ 
+                //클릭한 카드와 이전 카드가 같으면 함수 종료
+                if(index==prevIndex){
+                    return;
+                }
+                //For the cards which are not clicked 
+                $('.slider_panel img').not(index).css("z-index",-1000);
+                //For the previous image to appear on top of all not clicked cards
+                $('.slider_panel img').eq(prevIndex).css("z-index",-500);
+                //For the clicked image to appear on top of all not clicked cards
+                $('.slider_panel img').eq(index).css("z-index",1000);
+                if(prevIndex>index){
+                    //if previous image has higher index than clicked image
+                    //image comes from left to right
+                    $('.slider_panel img').eq(index).css("left","-600px");
+                    // null is the callback function -> what happens when animation is finished
+                    $('.slider_panel img').eq(index).animate({left:0},500,"linear",null);                    
+                }else{
+                    //if previous image has lower index than clicked image
+                    //image comes from right to left
+                    $('.slider_panel img').eq(index).css("left","600px");
+                    // null is the callback function -> what happens when animation is finished
+                    $('.slider_panel img').eq(index).animate({left:0},500,"linear",null);
+                }
+                // the clicked index becomes previous index
+                prevIndex=index;
+            };
+
+            $(".dot").click(function(){
+                moveSlider($(this).index());
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+   <div class="animation_canvas">
+        <div class="slider_panel">
+            <img src="img/cat1.jpg" class="slider_image"/>
+            <img src="img/cat2.jpg" class="slider_image"/>
+            <img src="img/cat3.jpg" class="slider_image"/>
+            <img src="img/cat4.jpg" class="slider_image"/>
+            <img src="img/cat5.jpg" class="slider_image"/>
+        </div>
+
+        <div class="control_panel" style="text-align:center">
+          <span class="dot">*</span> 
+          <span class="dot">*</span> 
+          <span class="dot">*</span> 
+          <span class="dot">*</span>
+          <span class="dot">*</span>
+        </div>
+    </div>
+</body>
+
+</html>
